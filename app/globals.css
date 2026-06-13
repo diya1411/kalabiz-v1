@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+@theme {
+  /* Green palette — mapped onto the existing token names so every section inherits it */
+  --color-ink: #06140e;        /* Black (deep green-black) */
+  --color-navy: #1d3630;       /* Dark Green */
+  --color-navy-soft: #24463d;  /* Dark Green, lighter */
+  --color-blue: #3f5f54;       /* primary accent — deep sage */
+  --color-blue-bright: #6e807a;/* Green (sage) */
+  --color-cyan: #6e807a;       /* sage highlight */
+  --color-cyan-soft: #becac4;  /* Light Green */
+  --color-paper: #ffffff;      /* White */
+  --color-offwhite: #f7f4ee;   /* Off-White */
+  --color-mist: #e1dfda;       /* Tan */
+  --color-fog: #d6d3cc;
+  --color-gray-soft: #6e807a;  /* muted sage text */
+  --color-gray-line: #d8d4cc;
+
+  --font-display: var(--font-jakarta), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-brand: var(--font-futura), "Futura", system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  --bg: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+::selection {
+  background: var(--color-navy);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-offwhite);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--color-navy), var(--color-blue-bright));
+  border-radius: 99px;
+}
+
+/* Utility: gradient text */
+.text-gradient {
+  background: linear-gradient(100deg, var(--color-navy) 0%, var(--color-blue) 45%, var(--color-blue-bright) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(29, 54, 48, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(29, 54, 48, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.bg-grid-fine {
+  background-image:
+    linear-gradient(to right, rgba(29, 54, 48, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(29, 54, 48, 0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.mask-fade-edges {
+  -webkit-mask-image: radial-gradient(circle at center, #000 55%, transparent 100%);
+  mask-image: radial-gradient(circle at center, #000 55%, transparent 100%);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.shadow-soft {
+  box-shadow: 0 1px 2px rgba(29, 54, 48, 0.05), 0 12px 40px rgba(29, 54, 48, 0.09);
+}
+
+.shadow-glow {
+  box-shadow: 0 10px 50px rgba(29, 54, 48, 0.22);
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+.animate-float {
+  animation: float-y 6s ease-in-out infinite;
+}
+
+@keyframes marquee-up {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+@keyframes marquee-down {
+  from { transform: translateY(-50%); }
+  to { transform: translateY(0); }
+}
+.marquee-col {
+  animation: marquee-up var(--speed, 40s) linear infinite;
+}
+.marquee-col.down {
+  animation-name: marquee-down;
+}
+.marquee-wall:hover .marquee-col {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-x {
+  animation: marquee-x var(--speed, 42s) linear infinite;
+}
+.marquee-track:hover .marquee-x {
+  animation-play-state: paused;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.7; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+@keyframes dash {
+  to { stroke-dashoffset: -1000; }
+}
+.animate-dash {
+  stroke-dasharray: 6 10;
+  animation: dash 22s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
