@@ -111,10 +111,10 @@ export default function LocationsMap() {
             interactive: false,
             style: {
               color: "#1d3630",
-              weight: 1.5,
-              opacity: 0.45,
+              weight: 3,
+              opacity: 0.85,
               fillColor: "#1d3630",
-              fillOpacity: 0.06,
+              fillOpacity: 0.16,
             },
           }).addTo(map);
         })
