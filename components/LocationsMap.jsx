@@ -23,6 +23,9 @@ const BRANCH = [
   { name: "Agro Storage Facility", note: "Khed, Pune", lat: 18.853, lng: 73.88 },
   { name: "DG Storage", note: "Mindewadi, Maval", lat: 18.73, lng: 73.67 },
   { name: "Kognoli Warehouse", note: "Chikodi, Karnataka", lat: 16.45, lng: 74.66 },
+  { name: "Defence Storage", note: "Umbare, Maval", lat: 18.78, lng: 73.55 },
+  { name: "Behre Facility", note: "Nigdi, Pune", lat: 18.6515, lng: 73.7682 },
+  { name: "Kasari Plot", note: "Shirur, Pune", lat: 18.72, lng: 74.18 },
 ];
 
 const SERVICE = [
@@ -98,6 +101,24 @@ export default function LocationsMap() {
             '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
         }
       ).addTo(map);
+
+      // subtle India outline so the country reads clearly
+      fetch("/india.geojson")
+        .then((r) => r.json())
+        .then((geo) => {
+          if (cancelled || !mapRef.current) return;
+          L.geoJSON(geo, {
+            interactive: false,
+            style: {
+              color: "#1d3630",
+              weight: 1.5,
+              opacity: 0.45,
+              fillColor: "#1d3630",
+              fillOpacity: 0.06,
+            },
+          }).addTo(map);
+        })
+        .catch(() => {});
 
       const mfgIcon = (label) =>
         L.divIcon({
