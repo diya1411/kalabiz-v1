@@ -5,13 +5,10 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LINKS = [
-  { label: "Pillars", id: "pillars" },
-  { label: "Accreditations", id: "accreditations" },
-  { label: "Companies", id: "ecosystem" },
-  { label: "Verticals", id: "verticals" },
-  { label: "Journey", id: "journey" },
-  { label: "Events", id: "events" },
-  { label: "Leadership", id: "board" },
+  { label: "Home", id: "top" },
+  { label: "Genset", id: "verticals" },
+  { label: "Defence", id: "verticals" },
+  { label: "Biotech", id: "verticals" },
 ];
 
 export default function Nav() {
@@ -63,7 +60,7 @@ export default function Nav() {
         <div className="hidden items-center gap-1 md:flex">
           {LINKS.map((l) => (
             <a
-              key={l.id}
+              key={l.label}
               href={`#${l.id}`}
               onClick={(e) => go(e, l.id)}
               className={`rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${
@@ -115,7 +112,7 @@ export default function Nav() {
           >
             {[...LINKS, { label: "Connect", id: "connect" }].map((l) => (
               <a
-                key={l.id}
+                key={l.label}
                 href={`#${l.id}`}
                 onClick={(e) => go(e, l.id)}
                 className="block rounded-xl px-4 py-3 text-base font-medium text-ink hover:bg-mist"
