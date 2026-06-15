@@ -3,10 +3,26 @@
 import { useEffect, useRef } from "react";
 
 const MANUFACTURING = [
-  { name: "Corporate & R&D Centre", note: "Pune", lat: 18.5204, lng: 73.8567 },
-  { name: "Genset Plants 1 & 4", note: "Chakan, Pune", lat: 18.7606, lng: 73.8636 },
-  { name: "Defence & Biotech — Plant 6", note: "Talegaon, Pune", lat: 18.7349, lng: 73.6759 },
-  { name: "Plant 5", note: "Bengaluru", lat: 12.9716, lng: 77.5946 },
+  { name: "Corporate HQ & R&D", note: "Pimpri, Pune", lat: 18.6298, lng: 73.8131 },
+  { name: "Genset Plant — Unit 1", note: "Chakan, Pune", lat: 18.7606, lng: 73.8636 },
+  { name: "Defence & Control Panels — Unit 4", note: "Chakan, Pune", lat: 18.7651, lng: 73.8686 },
+  { name: "Defence Plant", note: "Talegaon, Maval", lat: 18.8021764, lng: 73.7270154 },
+  { name: "Manufacturing Plant", note: "Nelamangala, Bengaluru", lat: 13.0996, lng: 77.3947 },
+];
+
+const BRANCH = [
+  { name: "Service Division", note: "Akurdi, Pune", lat: 18.6492, lng: 73.7707 },
+  { name: "Navi Mumbai Office", note: "CBD Belapur · Marketing", lat: 19.0237, lng: 73.04 },
+  { name: "Kolhapur Office", note: "Marketing", lat: 16.705, lng: 74.2433 },
+  { name: "Solapur Office", note: "Marketing", lat: 17.6599, lng: 75.9064 },
+  { name: "Bhopal Office", note: "Marketing", lat: 23.2461, lng: 77.4126 },
+  { name: "Indore Office", note: "Marketing", lat: 22.7196, lng: 75.8577 },
+  { name: "Bengaluru Office", note: "Ulsoor Road · Marketing", lat: 12.9784, lng: 77.62 },
+  { name: "Delhi Office", note: "Delhi Cantt · Defence", lat: 28.5945, lng: 77.134 },
+  { name: "Logistics & Warehouse", note: "Chakan MIDC, Pune", lat: 18.7402, lng: 73.835 },
+  { name: "Agro Storage Facility", note: "Khed, Pune", lat: 18.853, lng: 73.88 },
+  { name: "DG Storage", note: "Mindewadi, Maval", lat: 18.73, lng: 73.67 },
+  { name: "Kognoli Warehouse", note: "Chikodi, Karnataka", lat: 16.45, lng: 74.66 },
 ];
 
 const SERVICE = [
@@ -98,6 +114,13 @@ export default function LocationsMap() {
         iconAnchor: [5.5, 5.5],
       });
 
+      const branchIcon = L.divIcon({
+        className: "",
+        html: `<span style="display:block;width:13px;height:13px;border-radius:50%;background:#c08a2d;border:2px solid #fff;box-shadow:0 2px 6px rgba(29,54,48,.4)"></span>`,
+        iconSize: [13, 13],
+        iconAnchor: [6.5, 6.5],
+      });
+
       const intlIcon = L.divIcon({
         className: "",
         html: `<span style="display:flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#3f5f54;border:3px solid #fff;box-shadow:0 2px 8px rgba(29,54,48,.45)"></span>`,
@@ -121,6 +144,14 @@ export default function LocationsMap() {
           );
       });
 
+      BRANCH.forEach((b) => {
+        L.marker([b.lat, b.lng], { icon: branchIcon })
+          .addTo(map)
+          .bindPopup(
+            `<strong style="font-family:sans-serif">${b.name}</strong><br/><span style="color:#6e807a;font-family:sans-serif">${b.note}</span>`
+          );
+      });
+
       INTERNATIONAL.forEach((c) => {
         L.marker([c.lat, c.lng], { icon: intlIcon })
           .addTo(map)
@@ -130,7 +161,7 @@ export default function LocationsMap() {
       });
 
       // fit to all points
-      const all = [...MANUFACTURING, ...SERVICE, ...INTERNATIONAL].map((p) => [p.lat, p.lng]);
+      const all = [...MANUFACTURING, ...BRANCH, ...SERVICE, ...INTERNATIONAL].map((p) => [p.lat, p.lng]);
       map.fitBounds(all, { padding: [40, 40] });
     });
 
@@ -151,6 +182,10 @@ export default function LocationsMap() {
         <div className="flex items-center gap-2">
           <span className="h-3 w-3 rounded-full border-2 border-white bg-navy" style={{ boxShadow: "0 0 0 1px #d8d4cc" }} />
           <span className="font-medium text-ink">Manufacturing & R&D</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="h-3 w-3 rounded-full border-2 border-white" style={{ background: "#c08a2d", boxShadow: "0 0 0 1px #d8d4cc" }} />
+          <span className="font-medium text-ink">Branch Offices & Logistics</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="h-2.5 w-2.5 rounded-full border-2 border-white bg-gray-soft" style={{ boxShadow: "0 0 0 1px #d8d4cc" }} />
