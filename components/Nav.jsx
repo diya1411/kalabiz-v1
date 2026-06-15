@@ -5,8 +5,8 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LINKS = [
-  { label: "Accreditations", id: "accreditations" },
   { label: "Pillars", id: "pillars" },
+  { label: "Accreditations", id: "accreditations" },
   { label: "Companies", id: "ecosystem" },
   { label: "Verticals", id: "verticals" },
   { label: "Journey", id: "journey" },

@@ -10,8 +10,8 @@ const METRICS = [
   { value: 35, suffix: "+", label: "Years Experience" },
   { value: 4, suffix: " Lakh+", label: "Installations" },
   { value: 10, suffix: "+", label: "Countries" },
-  { value: 1000, suffix: "+", label: "Employees" },
-  { value: 800, suffix: "+", label: "Customers" },
+  { value: 1600, suffix: "+", label: "Employees" },
+  { value: 3, suffix: " Lakh+", label: "Customers" },
   { value: 50, suffix: "+", label: "Products" },
 ];
 

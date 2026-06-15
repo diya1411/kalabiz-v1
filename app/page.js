@@ -19,9 +19,9 @@ export default function Home() {
       <Hero />
       <TrustedBy />
       <Welcome />
+      <Pillars />
       <CoreValues />
       <Patents />
-      <Pillars />
       <Ecosystem />
       <Verticals />
       <Journey />
