@@ -69,7 +69,7 @@ export default function Pillars() {
             Three Strategic Pillars
           </SectionLabel>
           <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.04] tracking-tight md:text-6xl">
-            <TextReveal text="Building India's future." />
+            <TextReveal text="Contributing to building India's future." />
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-lg text-white/55">
             One conglomerate addressing the three foundations of a self-reliant
