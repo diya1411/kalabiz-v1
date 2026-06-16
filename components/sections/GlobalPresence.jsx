@@ -5,15 +5,7 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import { TextReveal } from "@/components/ui/Reveal";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import LocationsMap from "@/components/LocationsMap";
-
-const METRICS = [
-  { value: 35, suffix: "+", label: "Years Experience" },
-  { value: 4, suffix: " Lakh+", label: "Installations" },
-  { value: 10, suffix: "+", label: "Countries" },
-  { value: 1600, suffix: "+", label: "Employees" },
-  { value: 3, suffix: " Lakh+", label: "Customers" },
-  { value: 50, suffix: "+", label: "Products" },
-];
+import { STATS as METRICS } from "@/components/companyStats";
 
 export default function GlobalPresence() {
   return (

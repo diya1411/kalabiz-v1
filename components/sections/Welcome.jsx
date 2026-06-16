@@ -5,6 +5,8 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { TextReveal, FadeIn } from "@/components/ui/Reveal";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
+import { STATS } from "@/components/companyStats";
 
 const HIGHLIGHTS = [
   "35+ Years Experience",
@@ -76,6 +78,29 @@ export default function Welcome() {
           <motion.div style={{ y: y3 }} className="absolute bottom-24 right-2 w-[42%]">
             <PhotoCard src="/images/eco-electrolyser.jpg" label="Eco Green Energy" ratio="aspect-[4/3]" />
           </motion.div>
+        </div>
+      </div>
+
+      {/* stats band */}
+      <div className="mx-auto mt-16 max-w-7xl px-6 md:mt-20">
+        <div className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-gray-line bg-gray-line sm:grid-cols-3 lg:grid-cols-5">
+          {STATS.map((s, i) => (
+            <motion.div
+              key={s.label}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: (i % 5) * 0.06 }}
+              className="bg-offwhite p-6"
+            >
+              <AnimatedCounter
+                value={s.value}
+                suffix={s.suffix}
+                className="font-display text-2xl font-extrabold tracking-tight text-ink md:text-3xl"
+              />
+              <p className="mt-1.5 text-xs font-medium text-ink/55">{s.label}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
