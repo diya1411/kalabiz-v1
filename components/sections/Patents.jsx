@@ -7,21 +7,19 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import { TextReveal } from "@/components/ui/Reveal";
 
 const PATENTS = [
-  { img: "/images/certs/patent-ca-storage.jpg", title: "Controlled Atmosphere Storage", sub: "Patent · IP India" },
-  { img: "/images/certs/patent-loading.jpg", title: "Loading & Sorting System", sub: "Patent · IP India" },
-  { img: "/images/certs/patent-bridging.jpg", title: "Granted Patent", sub: "Patent Office, Govt. of India" },
-  { img: "/images/certs/patent-genset.jpg", title: "Granted Patent", sub: "Patent Office, Govt. of India" },
+  { img: "/images/certs/patent-storage-facility.jpg", title: "Storage Facility for Agricultural Products", sub: "Patent No. 397996 · IP India" },
+  { img: "/images/certs/patent-grading-sorting.jpg", title: "Grading & Sorting Conveyor System", sub: "Patent No. 412603 · IP India" },
+  { img: "/images/certs/patent-storage-system.jpg", title: "System for Storage of Agricultural Products", sub: "Patent No. 438137 · IP India" },
+  { img: "/images/certs/patent-onion-storage.jpg", title: "Onion Bulb Storage Structure", sub: "Patent No. 469459 · ICAR & KALA Biotech" },
 ];
 
 const CERTS = [
   { img: "/images/certs/iso9001-genset.jpg", title: "ISO 9001:2015", sub: "KALA Genset · SGS" },
   { img: "/images/certs/iso14001-genset.jpg", title: "ISO 14001:2015", sub: "KALA Genset · SGS" },
   { img: "/images/certs/iso45001-genset.jpg", title: "ISO 45001:2018", sub: "KALA Genset · SGS" },
-  { img: "/images/certs/iso9001-defence.jpg", title: "ISO 9001:2015", sub: "Defence & Aerospace · SGS" },
-  { img: "/images/certs/ncs-tcp.jpg", title: "NCS-TCP Recognition", sub: "Dept. of Biotechnology" },
-  { img: "/images/certs/cpri-test.jpg", title: "CPRI Test Report", sub: "Central Power Research Inst." },
-  { img: "/images/certs/samar-defence.jpg", title: "SAMAR Certificate", sub: "Advanced Manufacturing" },
-  { img: "/images/certs/dgqa-mod.jpg", title: "DGQA Registration", sub: "Ministry of Defence" },
+  { img: "/images/certs/sgs-crane-quality.jpg", title: "Knuckle Boom Crane · IS 4573:2020", sub: "SGS Certificate of Quality" },
+  { img: "/images/certs/samar-defence.jpg", title: "SAMAR Level 4", sub: "QCI · DRDO — Defence Mfg" },
+  { img: "/images/certs/samar-defence2.jpg", title: "SAMAR Level 4 · Defence Plant", sub: "QCI · DRDO" },
 ];
 
 const ACHIEVEMENTS = [
