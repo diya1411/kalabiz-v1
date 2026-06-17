@@ -73,13 +73,13 @@ const VERTICALS = [
   },
   {
     n: "07",
-    name: "Cranes",
+    name: "KALA Industries",
     img: "/images/crane-facility.jpg",
-    items: ["Cranes"],
+    items: ["Cranes", "Engineering Systems"],
   },
   {
     n: "08",
-    name: "Kala SaaS Solution",
+    name: "KALA Quantum AI",
     img: "/images/manufacturing.jpg",
     items: ["Integrated Solutions + SaaS"],
   },

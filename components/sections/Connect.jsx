@@ -55,7 +55,7 @@ export default function Connect() {
                 <option>Defence & Aerospace</option>
                 <option>Eco Green Energy</option>
                 <option>Biotech & Food Storage</option>
-                <option>AI / ML & SaaS</option>
+                <option>KALA Quantum AI</option>
                 <option>Partnership / Investment</option>
               </select>
             </div>

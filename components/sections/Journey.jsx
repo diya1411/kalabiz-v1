@@ -22,8 +22,8 @@ const MILESTONES = [
   { year: "2024", name: "Eco Green Energy", tag: "Hydrogen era" },
   { year: "2024", name: "Care Global", tag: "Lifecycle care" },
   { year: "2026", name: "Power Electronics", tag: "Next frontier" },
-  { year: "2026", name: "AI / ML — AI Ashwmedh", tag: "Intelligence" },
-  { year: "2026", name: "KALA Cranes", tag: "Engineering systems" },
+  { year: "2026", name: "KALA Quantum AI", tag: "SaaS & digital platforms" },
+  { year: "2026", name: "KALA Industries", tag: "Cranes & engineering systems" },
 ];
 
 export default function Journey() {

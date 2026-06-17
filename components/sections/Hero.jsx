@@ -8,7 +8,7 @@ const ROTATING = [
   "Energy Security",
   "Defence Self-Reliance",
   "Food Security",
-  "AI-Driven Innovation",
+  "Indigenous Engineering",
   "Advanced Manufacturing",
 ];
 

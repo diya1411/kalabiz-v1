@@ -73,7 +73,7 @@ export default function Pillars() {
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-lg text-white/55">
             One conglomerate addressing the three foundations of a self-reliant
-            nation — powered by indigenous engineering and AI-driven systems.
+            nation — powered by indigenous engineering and advanced manufacturing.
           </p>
         </div>
 

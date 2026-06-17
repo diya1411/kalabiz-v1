@@ -74,8 +74,7 @@ function ValueCard({ letter, title, sub, index }) {
         <span className="relative font-display text-4xl font-extrabold text-white">{letter}</span>
       </div>
 
-      <span className="font-mono text-xs text-blue">0{index + 1}</span>
-      <h3 className="mt-2 font-display text-xl font-bold tracking-tight text-ink">{title}</h3>
+      <h3 className="font-display text-xl font-bold tracking-tight text-ink">{title}</h3>
       <p className="mt-1.5 font-display text-sm italic text-blue">{sub}</p>
     </motion.div>
   );

@@ -6,14 +6,14 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import { TextReveal } from "@/components/ui/Reveal";
 
 const COMPANIES = [
-  { name: "Kala Genset", short: "Power systems & gensets", angle: -90 },
-  { name: "Kala Defence & Aerospace", short: "Mission-critical systems", angle: -45 },
-  { name: "Kala Eco Green Energy", short: "Hydrogen · solar · BESS", angle: 0 },
-  { name: "Kala Biotech", short: "Agri food preservation", angle: 45 },
-  { name: "Kala Care Global", short: "Service & lifecycle", angle: 90 },
-  { name: "Kala Power Electronics", short: "Converters & controllers", angle: 135 },
-  { name: "Kala Cranes", short: "Engineering systems", angle: 180 },
-  { name: "Kala AI/ML & SaaS", short: "AI Ashwmedh · platforms", angle: 225 },
+  { name: "KALA Genset", short: "Power systems & gensets", angle: -90 },
+  { name: "KALA Defence & Aerospace", short: "Mission-critical systems", angle: -45 },
+  { name: "KALA Eco Green Energy", short: "Hydrogen · solar · BESS", angle: 0 },
+  { name: "KALA Biotech", short: "Agri food preservation", angle: 45 },
+  { name: "KALA Care Global", short: "Service & lifecycle", angle: 90 },
+  { name: "KALA Power Electronics", short: "Converters & controllers", angle: 135 },
+  { name: "KALA Industries", short: "Cranes & engineering systems", angle: 180 },
+  { name: "KALA Quantum AI", short: "SaaS & digital platforms", angle: 225 },
 ];
 
 export default function Ecosystem() {

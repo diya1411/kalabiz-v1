@@ -9,5 +9,4 @@ export const STATS = [
   { value: 1600, suffix: "+", label: "Employees" },
   { value: 4, suffix: " Lakh+", label: "Installations" },
   { value: 800, suffix: "+", label: "Corporates & Groups Served" },
-  { value: 10, suffix: "+", label: "Exclusive Tech Partners" },
 ];
