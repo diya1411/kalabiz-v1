@@ -89,7 +89,7 @@ export default function Patents() {
       <div className="absolute inset-0 bg-grid-fine opacity-50" />
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
-          <SectionLabel index="05">Accreditations</SectionLabel>
+          <SectionLabel index="06">Accreditations</SectionLabel>
           <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-ink md:text-6xl">
             <TextReveal text="Engineered to the" />{" "}
             <TextReveal text="highest standards." className="text-gradient" />

@@ -38,7 +38,7 @@ export default function Board() {
       <div className="absolute inset-0 bg-grid-fine opacity-50" />
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <SectionLabel index="12" className="justify-center">Leadership</SectionLabel>
+          <SectionLabel index="13" className="justify-center">Leadership</SectionLabel>
           <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-ink md:text-6xl">
             <TextReveal text="Guided by" />{" "}
             <TextReveal text="experience." className="text-gradient" />

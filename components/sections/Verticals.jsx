@@ -125,7 +125,7 @@ export default function Verticals() {
         <div ref={trackRef} className="flex items-center gap-7 px-[8vw] will-change-transform">
           {/* intro panel */}
           <div className="w-[80vw] flex-none sm:w-[34vw]">
-            <SectionLabel index="07">Our Verticals</SectionLabel>
+            <SectionLabel index="08">Our Verticals</SectionLabel>
             <h2 className="mt-5 font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-ink">
               Eight ways we<br /><span className="text-gradient">build the future.</span>
             </h2>
@@ -149,7 +149,7 @@ export default function Verticals() {
 
       {/* mobile: stacked */}
       <div className="px-6 py-20 md:hidden">
-        <SectionLabel index="07">Our Verticals</SectionLabel>
+        <SectionLabel index="08">Our Verticals</SectionLabel>
         <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.04] tracking-tight text-ink">
           Eight ways we <span className="text-gradient">build the future.</span>
         </h2>

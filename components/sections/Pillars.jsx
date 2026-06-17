@@ -65,7 +65,7 @@ export default function Pillars() {
 
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <SectionLabel index="03" className="justify-center !text-cyan-soft">
+          <SectionLabel index="04" className="justify-center !text-cyan-soft">
             Three Strategic Pillars
           </SectionLabel>
           <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.04] tracking-tight md:text-6xl">

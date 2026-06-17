@@ -22,7 +22,7 @@ export default function Connect() {
       />
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <SectionLabel index="13" className="justify-center">Connect With Us</SectionLabel>
+          <SectionLabel index="14" className="justify-center">Connect With Us</SectionLabel>
           <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.04] tracking-tight text-ink md:text-6xl">
             <TextReveal text="Let's engineer" />
             <br />

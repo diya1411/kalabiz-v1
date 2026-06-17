@@ -38,7 +38,7 @@ export default function Ecosystem() {
       <div className="absolute inset-0 bg-grid-fine opacity-60" />
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <SectionLabel index="06" className="justify-center">
+          <SectionLabel index="07" className="justify-center">
             The KALA Ecosystem
           </SectionLabel>
           <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-ink md:text-6xl">

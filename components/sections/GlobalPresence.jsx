@@ -14,7 +14,7 @@ export default function GlobalPresence() {
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="grid items-center gap-14 lg:grid-cols-2">
           <div>
-            <SectionLabel index="10" className="!text-cyan-soft">Global Presence</SectionLabel>
+            <SectionLabel index="11" className="!text-cyan-soft">Global Presence</SectionLabel>
             <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] tracking-tight md:text-5xl">
               <TextReveal text="Scale you can" />
               <br />

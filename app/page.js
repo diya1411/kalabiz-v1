@@ -2,6 +2,7 @@ import Hero from "@/components/sections/Hero";
 import TrustedBy from "@/components/sections/TrustedBy";
 import Ecosystem from "@/components/sections/Ecosystem";
 import Welcome from "@/components/sections/Welcome";
+import VisionMission from "@/components/sections/VisionMission";
 import Pillars from "@/components/sections/Pillars";
 import Verticals from "@/components/sections/Verticals";
 import Facilities from "@/components/sections/Facilities";
@@ -19,6 +20,7 @@ export default function Home() {
       <Hero />
       <TrustedBy />
       <Welcome />
+      <VisionMission />
       <Pillars />
       <CoreValues />
       <Patents />

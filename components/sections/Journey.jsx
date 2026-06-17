@@ -80,7 +80,7 @@ export default function Journey() {
       {/* desktop: horizontal pinned flow */}
       <div className="relative hidden h-screen flex-col justify-center overflow-hidden md:flex">
         <div className="absolute left-[8vw] top-[18%]">
-          <SectionLabel index="08">Our Journey</SectionLabel>
+          <SectionLabel index="09">Our Journey</SectionLabel>
           <h2 className="mt-4 font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-ink">
             From 1991 to <span className="text-gradient">the future.</span>
           </h2>
@@ -108,7 +108,7 @@ export default function Journey() {
 
       {/* mobile: vertical flow */}
       <div className="px-6 py-20 md:hidden">
-        <SectionLabel index="08">Our Journey</SectionLabel>
+        <SectionLabel index="09">Our Journey</SectionLabel>
         <h2 className="mt-4 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-ink">
           From 1991 to <span className="text-gradient">the future.</span>
         </h2>
