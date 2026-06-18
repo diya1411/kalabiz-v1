@@ -19,6 +19,7 @@ const BRANCH = [
   { name: "Indore Office", note: "Marketing", lat: 22.7196, lng: 75.8577 },
   { name: "Bengaluru Office", note: "Ulsoor Road · Marketing", lat: 12.9784, lng: 77.62 },
   { name: "Delhi Office", note: "Delhi Cantt · Defence", lat: 28.5945, lng: 77.134 },
+  { name: "Leh Office", note: "Ladakh · Defence", lat: 34.1526, lng: 77.5771 },
   { name: "Logistics & Warehouse", note: "Chakan MIDC, Pune", lat: 18.7402, lng: 73.835 },
   { name: "Agro Storage Facility", note: "Khed, Pune", lat: 18.853, lng: 73.88 },
   { name: "DG Storage", note: "Mindewadi, Maval", lat: 18.73, lng: 73.67 },
