@@ -10,10 +10,10 @@ const PILLARS = [
     n: "01",
     title: "Energy Security",
     items: [
-      "Diesel, Gas, Hydrogen fuel cells, Solar",
-      "BESS (battery) & PCM (thermal) storage",
-      "Micro-grid power distribution",
-      "Smart energy for cities & factories",
+      { label: "Gensets", subs: ["Mobile & Stationary", "LHP", "MHP", "HHP", "UHHP", "Natural Gas", "Hybrid", "Alternate Fuel", "Optiprime & Custom", "Integrated Projects"] },
+      { label: "Power Generation", subs: ["Diesel", "Gas", "Hydrogen Fuel Cells", "Solar"] },
+      { label: "Energy Storage", subs: ["BESS", "TEM"] },
+      { label: "Power Distribution", subs: ["Micro-grid"] },
     ],
     outcome: "Lower grid dependence, faster growth, cleaner energy",
     tone: "blue",
@@ -23,10 +23,9 @@ const PILLARS = [
     n: "02",
     title: "Defence Systems",
     items: [
-      "Power for radar, submarines, ground units",
-      "Army bridges & knuckle boom cranes",
-      "AI-based Health & Usage Monitoring",
-      "Pulse power & lightweight alloys R&D",
+      { label: "Ground Systems", subs: ["8×8 Launcher", "Rocket Handling System", "TLV-M1", "P-RV / RLV / FSV", "Battery Command Centre", "Radar Vehicle (K-MAST)", "Communication Radio Relay Vehicle"] },
+      { label: "Engineering Systems", subs: ["Temp. Controlled Shelter", "Canister Project", "60 m ATB (MLC-70)", "36 m MB (MLC-02)", "iDEX SETU", "Composite Modular Ramp", "Engg System without Vehicle"] },
+      { label: "Advanced Power Management", subs: ["MIL-Grade DG Sets", "Skid & Trailer Mounted DG Sets", "Trailer Mounted Power Systems", "Dual-Voltage APU", "Hydraulic APU", "Hybrid APU", "PM Hybrid Alternator", "Battery-Based Compact Power Source"] },
     ],
     outcome: "Defence manufacturing hub, export-ready tech",
     tone: "navy",
@@ -36,10 +35,13 @@ const PILLARS = [
     n: "03",
     title: "Food Security",
     items: [
-      "Grain & onion preservation systems",
-      "AI-based quality analysis",
-      "Energy-efficient cold & dry storage",
-      "Chemical-free shelf life extension",
+      "Onion Preservation System",
+      "Controlled Atmosphere Multi-Product Preservation System",
+      "Grading & Sorting · Hopper · Inclined Conveyor · Tipper · Bag Filling",
+      "Perishable Preservation & Storage",
+      "AI Warehouse Management & Quality Assessment (NIR/AI)",
+      "Racking & Storage Systems",
+      "Biotechnology (Mol-Biolab) & R&D Centre",
     ],
     outcome: "Reduced post-harvest losses, farmer prosperity",
     tone: "cyan",
@@ -128,15 +130,23 @@ function PillarCard({ n, title, items, outcome, tone, Art, active, onHover, inde
       </h3>
 
       <ul className="relative mt-6 space-y-3">
-        {items.map((it) => (
-          <li key={it} className="flex items-start gap-3 text-[15px] leading-snug text-white/75">
-            <span
-              className="mt-1.5 h-1.5 w-1.5 flex-none rounded-full"
-              style={{ background: accent }}
-            />
-            {it}
-          </li>
-        ))}
+        {items.map((it) => {
+          const item = typeof it === "string" ? { label: it } : it;
+          return (
+            <li key={item.label} className="flex items-start gap-3 text-[15px] leading-snug text-white/75">
+              <span
+                className="mt-1.5 h-1.5 w-1.5 flex-none rounded-full"
+                style={{ background: accent }}
+              />
+              <div>
+                <span className={item.subs ? "font-medium text-white/90" : ""}>{item.label}</span>
+                {item.subs && (
+                  <p className="mt-0.5 text-[13px] leading-snug text-white/50">{item.subs.join(" · ")}</p>
+                )}
+              </div>
+            </li>
+          );
+        })}
       </ul>
 
       <div className="relative mt-auto pt-8">

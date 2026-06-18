@@ -148,8 +148,15 @@ html.lenis body {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+@keyframes marquee-x-reverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
 .marquee-x {
   animation: marquee-x var(--speed, 42s) linear infinite;
+}
+.marquee-x.reverse {
+  animation-name: marquee-x-reverse;
 }
 .marquee-track:hover .marquee-x {
   animation-play-state: paused;

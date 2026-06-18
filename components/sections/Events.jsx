@@ -1,25 +1,40 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { TextReveal } from "@/components/ui/Reveal";
 
+// Featured banner images cycle through these
+const FEATURED = [
+  { img: "/images/gallery/team-kala.jpg", tag: "Team KALA", title: "One family. One mission." },
+  { img: "/images/gallery/team-kala-2.jpg", tag: "Team KALA", title: "Together, we build the future." },
+];
+
 const GALLERY = [
-  { img: "/images/gallery/real-team.jpg", label: "One family. One mission.", tag: "Team KALA", ratio: "aspect-[3/2]" },
-  { img: "/images/gallery/real-independence-1.jpg", label: "Independence Day flag hoisting", tag: "Independence Day", ratio: "aspect-[3/2]" },
-  { img: "/images/gallery/real-rajani-2.jpg", label: "KALA Rajani — cultural night", tag: "KALA Rajani", ratio: "aspect-[3/2]" },
-  { img: "/images/gallery/real-tree.jpg", label: "Vriksharopan tree plantation", tag: "KALA Foundation", ratio: "aspect-[16/9]" },
-  { img: "/images/gallery/real-felicitation.jpg", label: "Felicitation ceremony", tag: "Staff Welfare", ratio: "aspect-[3/2]" },
-  { img: "/images/gallery/real-rajani-1.jpg", label: "On-stage performance", tag: "KALA Rajani", ratio: "aspect-[16/9]" },
-  { img: "/images/gallery/real-parade.jpg", label: "Team on parade", tag: "Independence Day", ratio: "aspect-[3/2]" },
-  { img: "/images/gallery/real-gathering.jpg", label: "Annual gathering", tag: "Annual Event", ratio: "aspect-[3/2]" },
-  { img: "/images/gallery/real-rajani-3.jpg", label: "Lights, stage, KALA", tag: "KALA Rajani", ratio: "aspect-[3/2]" },
-  { img: "/images/gallery/real-site.jpg", label: "Team at the plant", tag: "Staff Welfare", ratio: "aspect-[3/2]" },
-  { img: "/images/gallery/real-awards.jpg", label: "Awards & recognition", tag: "Annual Event", ratio: "aspect-[3/2]" },
-  { img: "/images/gallery/real-independence-2.jpg", label: "Independence Day celebration", tag: "Independence Day", ratio: "aspect-[3/2]" },
-  { img: "/images/gallery/ev-kids-1.jpg", label: "Kids Day fun", tag: "Kids Day", ratio: "aspect-[16/9]" },
-  { img: "/images/gallery/ev-kids-2.jpg", label: "Little champions", tag: "Kids Day", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/csr-team-wide.jpg", label: "One family. One mission.", tag: "Team KALA", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/flagoff-1.jpg", label: "Flag-off ceremony", tag: "Flag Off", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/csr-tree-1.jpg", label: "Vriksharopan tree plantation", tag: "KALA Foundation", ratio: "aspect-[16/9]" },
+  { img: "/images/gallery/csr-health-1.jpg", label: "Varkari Health Camp", tag: "CSR Initiative", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/flagoff-2.jpg", label: "Dispatch flag-off", tag: "Flag Off", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/csr-independence-1.jpg", label: "Independence Day flag hoisting", tag: "Independence Day", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/csr-kpl-1.jpg", label: "KALA Premier League", tag: "Staff Welfare", ratio: "aspect-[16/9]" },
+  { img: "/images/gallery/flagoff-3.jpg", label: "First dispatch — Defence & Aerospace", tag: "Flag Off", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/csr-blood-1.jpg", label: "Blood donation camp", tag: "CSR Initiative", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/csr-tree-4.jpg", label: "Tree plantation drive", tag: "KALA Foundation", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/flagoff-4.jpg", label: "Pooja before dispatch", tag: "Flag Off", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/csr-independence-2.jpg", label: "Independence Day celebration", tag: "Independence Day", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/csr-school-1.jpg", label: "School digital lab donation", tag: "CSR Initiative", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/flagoff-7.jpg", label: "Team at the flag-off", tag: "Flag Off", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/csr-birthday-1.jpg", label: "Birthday celebration", tag: "Staff Welfare", ratio: "aspect-[16/9]" },
+  { img: "/images/gallery/csr-vaccine-1.jpg", label: "Covid vaccination camp", tag: "CSR Initiative", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/flagoff-5.jpg", label: "Dispatch ceremony", tag: "Flag Off", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/csr-ganpati-1.jpg", label: "Ganpati installation", tag: "Staff Welfare", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/csr-health-3.jpg", label: "Health camp", tag: "CSR Initiative", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/flagoff-6.jpg", label: "Flag-off ceremony", tag: "Flag Off", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/csr-independence-4.jpg", label: "Flag hoisting at the plant", tag: "Independence Day", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/csr-tree-3.jpg", label: "Greening the campus", tag: "KALA Foundation", ratio: "aspect-[3/2]" },
 ];
 
 // distribute photos round-robin into 4 columns for the moving wall
@@ -27,6 +42,13 @@ const COLUMNS = [[], [], [], []];
 GALLERY.forEach((g, i) => COLUMNS[i % 4].push(g));
 
 export default function Events() {
+  const [feat, setFeat] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setFeat((f) => (f + 1) % FEATURED.length), 4500);
+    return () => clearInterval(id);
+  }, []);
+  const active = FEATURED[feat];
+
   return (
     <section id="events" className="relative overflow-hidden bg-ink py-24 text-white md:py-32">
       <div className="absolute inset-0 bg-grid opacity-[0.06]" />
@@ -53,22 +75,42 @@ export default function Events() {
           className="group relative mt-14 overflow-hidden rounded-3xl border border-white/10"
         >
           <div className="relative aspect-[30/7] w-full">
-            <Image
-              src="/images/gallery/team-kala.jpg"
-              alt="Team KALA"
-              fill
-              sizes="100vw"
-              className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-            />
+            <AnimatePresence mode="sync">
+              <motion.div
+                key={active.img}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.1, ease: "easeInOut" }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={active.img}
+                  alt={active.tag}
+                  fill
+                  sizes="100vw"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                />
+              </motion.div>
+            </AnimatePresence>
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
           <div className="absolute bottom-0 left-0 p-6 md:p-8">
             <span className="rounded-full bg-cyan/20 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-soft backdrop-blur">
-              Team KALA
+              {active.tag}
             </span>
-            <h3 className="mt-3 font-display text-2xl font-extrabold md:text-3xl">
-              One family. One mission.
-            </h3>
+            <AnimatePresence mode="wait">
+              <motion.h3
+                key={active.title}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.5 }}
+                className="mt-3 font-display text-2xl font-extrabold md:text-3xl"
+              >
+                {active.title}
+              </motion.h3>
+            </AnimatePresence>
           </div>
         </motion.div>
 

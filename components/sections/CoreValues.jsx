@@ -18,7 +18,7 @@ export default function CoreValues() {
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-3xl text-center">
           <SectionLabel index="05" className="justify-center">Core Values</SectionLabel>
-          <h2 className="mt-5 font-brand text-4xl font-extrabold leading-[1.05] tracking-tight text-ink md:text-6xl">
+          <h2 className="mt-5 font-serif text-4xl font-medium leading-[1.05] tracking-tight text-ink md:text-6xl">
             <TextReveal text="The core values" />{" "}
             <TextReveal text="of KALA." className="text-gradient" />
           </h2>
@@ -45,7 +45,7 @@ function ValueCard({ letter, title, sub, index }) {
       className="group relative flex flex-col items-center overflow-hidden rounded-3xl border border-gray-line bg-white p-7 text-center shadow-soft transition-all duration-500 hover:-translate-y-1.5 hover:shadow-glow"
     >
       {/* giant ghost letter */}
-      <span className="pointer-events-none absolute -top-6 right-2 font-brand text-[8rem] font-extrabold leading-none text-ink/[0.04] transition-colors duration-500 group-hover:text-blue/10">
+      <span className="pointer-events-none absolute -top-6 right-2 font-brand text-[8rem] font-normal leading-none text-ink/[0.04] transition-colors duration-500 group-hover:text-blue/10">
         {letter}
       </span>
 
@@ -68,10 +68,10 @@ function ValueCard({ letter, title, sub, index }) {
             transition={{ duration: 1.1, delay: 0.3 + index * 0.12 + k * 0.15 }}
           />
         ))}
-        <span className="relative font-brand text-4xl font-extrabold text-white">{letter}</span>
+        <span className="relative font-brand text-4xl font-normal text-white">{letter}</span>
       </div>
 
-      <h3 className="font-brand text-xl font-bold tracking-tight text-ink">{title}</h3>
+      <h3 className="font-brand text-xl font-normal tracking-tight text-ink">{title}</h3>
       <p className="mt-1.5 font-display text-sm italic text-blue">{sub}</p>
     </motion.div>
   );

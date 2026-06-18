@@ -18,7 +18,7 @@ const BACKBONE = [
   { id: "hr", group: "Enabling Foundation", category: "Enabling Function", name: "HR", desc: "Talent acquisition, culture and GenNext leadership readiness.", tags: ["Talent", "Culture", "GenNext"] },
   { id: "legal", group: "Enabling Foundation", category: "Enabling Function", name: "Legal & Statutory", desc: "Compliance, intellectual-property protection and corporate governance.", tags: ["Compliance", "IP", "Governance"] },
   { id: "it", group: "Enabling Foundation", category: "Enabling Function", name: "IT Infrastructure", desc: "ERP systems, networks and the cybersecurity backbone.", tags: ["ERP", "Networks", "Security"] },
-  { id: "saas", group: "Enabling Foundation", category: "Enabling Function", name: "AI/ML Backbone & SaaS", desc: "Digital platforms and SaaS connecting every function end-to-end.", tags: ["SaaS", "Digital Platforms", "Integration"] },
+  { id: "saas", group: "Enabling Foundation", category: "Enabling Function", name: "AI/ML", desc: "Digital platforms and SaaS connecting every function end-to-end.", tags: ["SaaS", "Digital Platforms", "Integration"] },
 ];
 
 export default function Facilities() {
