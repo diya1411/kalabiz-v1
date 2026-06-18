@@ -81,7 +81,7 @@ const VERTICALS = [
     n: "07",
     name: "KALA Industries",
     img: "/images/ver-industries.jpg",
-    items: ["Military Bridges", "Engineering Systems", "Cranes"],
+    items: ["Military Bridges", "Cranes", "Engineering Systems"],
   },
   {
     n: "08",

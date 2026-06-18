@@ -7,7 +7,7 @@ import { TextReveal } from "@/components/ui/Reveal";
 
 const NODES = [
   { id: "hub", label: "KALA", x: 50, y: 50, hub: true },
-  { id: "mfg", label: "Manufacturing", x: 22, y: 24, detail: "6 facilities · 2 Million sq ft" },
+  { id: "mfg", label: "Manufacturing", x: 22, y: 24, detail: "6 facilities · 2 Million+ sq ft" },
   { id: "rnd", label: "R&D Centres", x: 78, y: 22, detail: "100+ engineers" },
   { id: "partners", label: "Technology Partners", x: 88, y: 54, detail: "10+ exclusive" },
   { id: "service", label: "Service Network", x: 74, y: 82, detail: "PAN-India · 14 districts" },

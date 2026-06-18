@@ -128,13 +128,6 @@ export default function Connect() {
             </div>
 
             <div className="rounded-3xl border border-gray-line bg-white p-6 shadow-soft">
-              <h3 className="font-display text-lg font-bold text-ink">International Presence</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink/70">
-                Serving clients across <span className="font-semibold text-ink">20+ countries</span> — including Oman, Kenya and Uganda.
-              </p>
-            </div>
-
-            <div className="rounded-3xl border border-gray-line bg-white p-6 shadow-soft">
               <h3 className="font-display text-lg font-bold text-ink">Follow Us</h3>
               <div className="mt-3 flex flex-wrap gap-2.5">
                 {SOCIALS.map((s) => (

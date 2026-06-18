@@ -3,7 +3,7 @@ export const STATS = [
   { value: 35, suffix: "+", label: "Years Experience" },
   { value: 20, suffix: "+", label: "Countries" },
   { value: 30, suffix: "+", label: "Segment-wise Divisions" },
-  { value: 2, suffix: " Million Sq Ft", label: "Own Manufacturing" },
+  { value: 2, suffix: " Million+ Sq Ft", label: "Own Manufacturing" },
   { value: 200, suffix: "+", label: "Products" },
   { value: 20, suffix: "+", label: "Factories & Branch Offices" },
   { value: 1600, suffix: "+", label: "Employees" },
