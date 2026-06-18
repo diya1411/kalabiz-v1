@@ -11,9 +11,7 @@ export default function SectionLabel({ index, children, className = "" }) {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className={`flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-blue ${className}`}
     >
-      <span className="inline-flex h-6 items-center rounded-full border border-blue/25 bg-blue/5 px-2.5 font-mono text-[10px] text-blue">
-        {index}
-      </span>
+      <span className="h-px w-6 bg-blue/40" />
       <span className="text-gray-soft">{children}</span>
     </motion.div>
   );

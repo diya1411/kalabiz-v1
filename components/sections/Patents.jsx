@@ -20,13 +20,18 @@ const CERTS = [
   { img: "/images/certs/sgs-crane-quality.jpg", title: "Knuckle Boom Crane · IS 4573:2020", sub: "SGS Certificate of Quality" },
   { img: "/images/certs/samar-defence.jpg", title: "SAMAR Level 4", sub: "QCI · DRDO — Defence Mfg" },
   { img: "/images/certs/samar-defence2.jpg", title: "SAMAR Level 4 · Defence Plant", sub: "QCI · DRDO" },
+  { img: "/images/certs/test-tata-emi-emc.jpg", title: "EMI/EMC Test · 62.5 kVA DG Set", sub: "TATA Advanced Systems" },
+  { img: "/images/certs/test-arai-62kva.jpg", title: "Environmental Test · 62.5 kVA DG Set", sub: "ARAI" },
+  { img: "/images/certs/test-arai-125kva.jpg", title: "Environmental Test · 125 kVA DG Set", sub: "ARAI" },
+  { img: "/images/certs/test-qualitek-30kva.jpg", title: "Environmental Test · 30 kVA", sub: "Qualitek Labs · IAF Project" },
+  { img: "/images/certs/test-cosmic-emc.jpg", title: "EMC Test · Knuckle Boom Crane", sub: "Cosmic Compliance Test Lab" },
 ];
 
 const ACHIEVEMENTS = [
-  "India's first DG set for −40 °C operation",
+  "India's first CPCB DG set for −40 °C operation",
   "First Indian DG set running at both 50 Hz & 60 Hz",
   "Trial-tested at 5,500 m altitude",
-  "165+ DG sets supplied to the Indian Armed Forces",
+  "10K+ CPCB DG sets supplied annually",
 ];
 
 // combined pool that feeds the live grid — add new items to PATENTS / CERTS above
@@ -34,7 +39,7 @@ const POOL = [
   ...PATENTS.map((p) => ({ ...p, badge: "Patent" })),
   ...CERTS.map((c) => ({ ...c })),
 ];
-const GRID_SIZE = Math.min(8, POOL.length);
+const GRID_SIZE = Math.min(4, POOL.length);
 
 export default function Patents() {
   const [slots, setSlots] = useState(() => POOL.slice(0, GRID_SIZE).map((_, i) => i));
@@ -186,7 +191,8 @@ function AllModal({ onClose }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.25 }}
       onClick={onClose}
-      className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto bg-ink/70 p-4 backdrop-blur-sm sm:p-8"
+      data-lenis-prevent
+      className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto overscroll-contain bg-ink/70 p-4 backdrop-blur-sm sm:p-8"
     >
       <motion.div
         initial={{ opacity: 0, y: 24, scale: 0.98 }}

@@ -120,6 +120,7 @@ export default function Welcome() {
               <AnimatedCounter
                 value={s.value}
                 suffix={s.suffix}
+                decimals={s.decimals || 0}
                 className="font-display text-2xl font-extrabold tracking-tight text-ink md:text-3xl"
               />
               <p className="mt-1.5 text-xs font-medium text-ink/55">{s.label}</p>

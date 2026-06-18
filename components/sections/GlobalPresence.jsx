@@ -21,7 +21,7 @@ export default function GlobalPresence() {
               <TextReveal text="measure." className="text-cyan-soft" />
             </h2>
             <p className="mt-5 max-w-md text-lg text-white/55">
-              Three decades, three continents, four lakh installations — a footprint
+              Three decades, three continents, 400K+ installations — a footprint
               engineered in India and trusted worldwide.
             </p>
 
@@ -45,6 +45,7 @@ export default function GlobalPresence() {
                 <AnimatedCounter
                   value={m.value}
                   suffix={m.suffix}
+                  decimals={m.decimals || 0}
                   className="font-display text-3xl font-extrabold tracking-tight text-white md:text-4xl"
                 />
                 <p className="mt-1.5 text-xs font-medium text-white/50">{m.label}</p>

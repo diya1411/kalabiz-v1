@@ -14,8 +14,8 @@ const ROTATING = [
 
 const STATS = [
   { v: "35+", l: "Years" },
-  { v: "4 Lakh+", l: "Installations" },
-  { v: "10+", l: "Countries" },
+  { v: "400K+", l: "Installations" },
+  { v: "20+", l: "Countries" },
 ];
 
 export default function Hero() {

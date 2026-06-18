@@ -7,6 +7,6 @@ export const STATS = [
   { value: 200, suffix: "+", label: "Products" },
   { value: 20, suffix: "+", label: "Factories & Branch Offices" },
   { value: 1600, suffix: "+", label: "Employees" },
-  { value: 4, suffix: " Lakh+", label: "Installations" },
+  { value: 400, suffix: "K+", label: "Installations" },
   { value: 800, suffix: "+", label: "Corporates & Groups Served" },
 ];

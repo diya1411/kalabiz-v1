@@ -7,13 +7,13 @@ import { TextReveal } from "@/components/ui/Reveal";
 
 const NODES = [
   { id: "hub", label: "KALA", x: 50, y: 50, hub: true },
-  { id: "mfg", label: "Manufacturing", x: 22, y: 24, detail: "6 facilities · 5 Lakh sq ft" },
+  { id: "mfg", label: "Manufacturing", x: 22, y: 24, detail: "6 facilities · 2 Million sq ft" },
   { id: "rnd", label: "R&D Centres", x: 78, y: 22, detail: "100+ engineers" },
   { id: "partners", label: "Technology Partners", x: 88, y: 54, detail: "10+ exclusive" },
   { id: "service", label: "Service Network", x: 74, y: 82, detail: "PAN-India · 14 districts" },
   { id: "customers", label: "Customers", x: 44, y: 88, detail: "800+ corporates" },
   { id: "gov", label: "Govt Collaborations", x: 16, y: 74, detail: "Army · DRDO · ISRO · BEL" },
-  { id: "global", label: "Global Presence", x: 12, y: 50, detail: "10+ countries" },
+  { id: "global", label: "Global Presence", x: 12, y: 50, detail: "20+ countries" },
 ];
 
 const EDGES = ["mfg", "rnd", "partners", "service", "customers", "gov", "global"];
