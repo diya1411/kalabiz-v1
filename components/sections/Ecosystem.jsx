@@ -41,7 +41,7 @@ export default function Ecosystem() {
           <SectionLabel index="07" className="justify-center">
             The KALA Ecosystem
           </SectionLabel>
-          <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-ink md:text-6xl">
+          <h2 className="mt-5 font-serif text-4xl font-medium leading-[1.05] tracking-tight text-ink md:text-6xl">
             <TextReveal text="Eight companies." />
             <br />
             <TextReveal text="One engineering force." className="text-gradient" />

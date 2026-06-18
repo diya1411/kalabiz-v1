@@ -1,4 +1,4 @@
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Bricolage_Grotesque, Playfair_Display } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -10,11 +10,19 @@ const inter = Inter({
   display: "swap",
 });
 
-// Editorial serif display typeface (headings)
-const jakarta = Playfair_Display({
+// Display typeface (card titles, stats, UI)
+const jakarta = Bricolage_Grotesque({
   subsets: ["latin"],
   variable: "--font-jakarta",
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+// Editorial serif for main headings (used un-bolded)
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -58,7 +66,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jakarta.variable} ${futura.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jakarta.variable} ${playfair.variable} ${futura.variable}`}>
       <body>
         <SmoothScroll>
           <Nav />

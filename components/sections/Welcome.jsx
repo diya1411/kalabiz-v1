@@ -39,7 +39,7 @@ export default function Welcome() {
         {/* LEFT — story */}
         <div>
           <SectionLabel index="02">Welcome to KALA Group</SectionLabel>
-          <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-ink md:text-5xl">
+          <h2 className="mt-5 font-serif text-4xl font-medium leading-[1.05] tracking-tight text-ink md:text-5xl">
             <TextReveal text="Three decades of" />{" "}
             <TextReveal text="engineering a" />{" "}
             <TextReveal text="sustainable tomorrow." className="text-gradient" />

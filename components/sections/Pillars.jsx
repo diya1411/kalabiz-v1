@@ -68,7 +68,7 @@ export default function Pillars() {
           <SectionLabel index="04" className="justify-center !text-cyan-soft">
             Three Strategic Pillars
           </SectionLabel>
-          <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.04] tracking-tight md:text-6xl">
+          <h2 className="mt-5 font-serif text-4xl font-medium leading-[1.04] tracking-tight md:text-6xl">
             <TextReveal text="Contributing to building India's future." />
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-lg text-white/55">

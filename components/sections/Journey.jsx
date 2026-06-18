@@ -81,7 +81,7 @@ export default function Journey() {
       <div className="relative hidden h-screen flex-col justify-center overflow-hidden md:flex">
         <div className="absolute left-[8vw] top-[18%]">
           <SectionLabel index="09">Our Journey</SectionLabel>
-          <h2 className="mt-4 font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-ink">
+          <h2 className="mt-4 font-serif text-5xl font-medium leading-[1.02] tracking-tight text-ink">
             From 1991 to <span className="text-gradient">the future.</span>
           </h2>
           <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-blue">
@@ -109,7 +109,7 @@ export default function Journey() {
       {/* mobile: vertical flow */}
       <div className="px-6 py-20 md:hidden">
         <SectionLabel index="09">Our Journey</SectionLabel>
-        <h2 className="mt-4 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-ink">
+        <h2 className="mt-4 font-serif text-4xl font-medium leading-[1.05] tracking-tight text-ink">
           From 1991 to <span className="text-gradient">the future.</span>
         </h2>
         <div className="relative mt-10 pl-8">

@@ -33,7 +33,7 @@ export default function Events() {
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
           <SectionLabel index="12" className="!text-cyan-soft">Celebrations & Events</SectionLabel>
-          <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
+          <h2 className="mt-5 font-serif text-4xl font-medium leading-[1.05] tracking-tight md:text-6xl">
             <TextReveal text="Moments that" />{" "}
             <TextReveal text="define us." className="text-cyan-soft" />
           </h2>

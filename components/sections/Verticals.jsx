@@ -126,7 +126,7 @@ export default function Verticals() {
           {/* intro panel */}
           <div className="w-[80vw] flex-none sm:w-[34vw]">
             <SectionLabel index="08">Our Verticals</SectionLabel>
-            <h2 className="mt-5 font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-ink">
+            <h2 className="mt-5 font-serif text-5xl font-medium leading-[1.02] tracking-tight text-ink">
               Eight ways we<br /><span className="text-gradient">build the future.</span>
             </h2>
             <p className="mt-5 max-w-sm text-lg text-gray-soft">
@@ -150,7 +150,7 @@ export default function Verticals() {
       {/* mobile: stacked */}
       <div className="px-6 py-20 md:hidden">
         <SectionLabel index="08">Our Verticals</SectionLabel>
-        <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.04] tracking-tight text-ink">
+        <h2 className="mt-5 font-serif text-4xl font-medium leading-[1.04] tracking-tight text-ink">
           Eight ways we <span className="text-gradient">build the future.</span>
         </h2>
         <div className="mt-8 space-y-4">

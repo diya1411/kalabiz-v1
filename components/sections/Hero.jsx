@@ -86,7 +86,7 @@ export default function Hero() {
         style={{ y: yText, opacity }}
         className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-6"
       >
-        <h1 className="font-display font-extrabold leading-[0.84] tracking-[-0.04em]">
+        <h1 className="font-serif font-medium leading-[0.84] tracking-[-0.04em]">
           <Reveal delay={0.3}>
             <span className="block text-[22vw] sm:text-[17vw] lg:text-[13rem]">KALA</span>
           </Reveal>

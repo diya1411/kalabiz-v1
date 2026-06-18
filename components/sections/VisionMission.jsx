@@ -34,7 +34,7 @@ export default function VisionMission() {
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
           <SectionLabel>Vision, Mission & News</SectionLabel>
-          <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-ink md:text-6xl">
+          <h2 className="mt-5 font-serif text-4xl font-medium leading-[1.05] tracking-tight text-ink md:text-6xl">
             <TextReveal text="Why we" />{" "}
             <TextReveal text="build." className="text-gradient" />
           </h2>

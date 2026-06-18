@@ -42,7 +42,7 @@ export default function Network() {
         <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <SectionLabel index="06" className="!text-cyan-soft">Our Network</SectionLabel>
-            <h2 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] tracking-tight md:text-5xl">
+            <h2 className="mt-5 font-serif text-4xl font-medium leading-[1.05] tracking-tight md:text-5xl">
               <TextReveal text="An ecosystem" />
               <br />
               <TextReveal text="built to scale." className="text-cyan-soft" />
