@@ -42,6 +42,8 @@ const VERTICALS = [
       "Grading & Sorting",
       "Hopper · Inclined Conveyor · Tipper",
       "Bag Filling",
+      "Plant Tissue Culture",
+      "Molecular Biology Lab",
     ],
   },
   {
@@ -79,7 +81,7 @@ const VERTICALS = [
     n: "07",
     name: "KALA Industries",
     img: "/images/ver-industries.jpg",
-    items: ["Cranes", "Engineering Systems", "Military Bridges"],
+    items: ["Military Bridges", "Engineering Systems", "Cranes"],
   },
   {
     n: "08",
