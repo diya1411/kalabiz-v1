@@ -6,21 +6,20 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import { TextReveal } from "@/components/ui/Reveal";
 
 const GALLERY = [
-  { img: "/images/gallery/ev-rajani-2.jpg", label: "KALA Rajani — cultural night", tag: "Annual Event", ratio: "aspect-[3/2]" },
-  { img: "/images/gallery/ev-independence-1.jpg", label: "Independence Day flag hoisting", tag: "Independence Day", ratio: "aspect-[3/2]" },
-  { img: "/images/gallery/ev-womens-day.jpg", label: "Women's Day celebration", tag: "Staff Welfare", ratio: "aspect-[21/9]" },
+  { img: "/images/gallery/real-team.jpg", label: "One family. One mission.", tag: "Team KALA", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/real-independence-1.jpg", label: "Independence Day flag hoisting", tag: "Independence Day", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/real-rajani-2.jpg", label: "KALA Rajani — cultural night", tag: "KALA Rajani", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/real-tree.jpg", label: "Vriksharopan tree plantation", tag: "KALA Foundation", ratio: "aspect-[16/9]" },
+  { img: "/images/gallery/real-felicitation.jpg", label: "Felicitation ceremony", tag: "Staff Welfare", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/real-rajani-1.jpg", label: "On-stage performance", tag: "KALA Rajani", ratio: "aspect-[16/9]" },
+  { img: "/images/gallery/real-parade.jpg", label: "Team on parade", tag: "Independence Day", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/real-gathering.jpg", label: "Annual gathering", tag: "Annual Event", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/real-rajani-3.jpg", label: "Lights, stage, KALA", tag: "KALA Rajani", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/real-site.jpg", label: "Team at the plant", tag: "Staff Welfare", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/real-awards.jpg", label: "Awards & recognition", tag: "Annual Event", ratio: "aspect-[3/2]" },
+  { img: "/images/gallery/real-independence-2.jpg", label: "Independence Day celebration", tag: "Independence Day", ratio: "aspect-[3/2]" },
   { img: "/images/gallery/ev-kids-1.jpg", label: "Kids Day fun", tag: "Kids Day", ratio: "aspect-[16/9]" },
-  { img: "/images/gallery/ev-rajani-3.jpg", label: "On-stage performance", tag: "KALA Rajani", ratio: "aspect-[3/2]" },
-  { img: "/images/gallery/ev-welfare-1.jpg", label: "Sports & team spirit", tag: "Staff Welfare", ratio: "aspect-[4/3]" },
-  { img: "/images/gallery/ev-tree-1.jpg", label: "Vriksharopan tree plantation", tag: "KALA Foundation", ratio: "aspect-[3/2]" },
-  { img: "/images/gallery/ev-rajani-1.jpg", label: "Rajani folk act", tag: "KALA Rajani", ratio: "aspect-[16/9]" },
-  { img: "/images/gallery/ev-engineers-day.jpg", label: "Engineers' Day", tag: "Staff Welfare", ratio: "aspect-[21/9]" },
-  { img: "/images/gallery/ev-independence-2.jpg", label: "Team on parade", tag: "Independence Day", ratio: "aspect-[3/2]" },
-  { img: "/images/gallery/ev-rajani-4.jpg", label: "Dance showcase", tag: "KALA Rajani", ratio: "aspect-[3/2]" },
-  { img: "/images/gallery/ev-health-1.jpg", label: "Health & blood-donation camp", tag: "KALA Foundation", ratio: "aspect-[3/2]" },
-  { img: "/images/gallery/ev-welfare-2.jpg", label: "Annual sports meet", tag: "Staff Welfare", ratio: "aspect-[5/2]" },
-  { img: "/images/gallery/ev-tree-2.jpg", label: "Let's make a better planet", tag: "KALA Foundation", ratio: "aspect-[16/9]" },
-  { img: "/images/gallery/ev-rajani-5.jpg", label: "Lights, stage, KALA", tag: "KALA Rajani", ratio: "aspect-[16/9]" },
+  { img: "/images/gallery/ev-kids-2.jpg", label: "Little champions", tag: "Kids Day", ratio: "aspect-[3/2]" },
 ];
 
 // distribute photos round-robin into 4 columns for the moving wall

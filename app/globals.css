@@ -16,8 +16,9 @@
   --color-gray-soft: #6e807a;  /* muted sage text */
   --color-gray-line: #d8d4cc;
 
-  --font-display: var(--font-jakarta), system-ui, sans-serif;
-  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-jakarta), Georgia, "Times New Roman", serif;
+  --font-serif: var(--font-jakarta), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-brand: var(--font-futura), "Futura", system-ui, sans-serif;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);

@@ -1,4 +1,4 @@
-import { Inter, Bricolage_Grotesque } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -10,11 +10,11 @@ const inter = Inter({
   display: "swap",
 });
 
-// Modern editorial display typeface
-const jakarta = Bricolage_Grotesque({
+// Editorial serif display typeface (headings)
+const jakarta = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-jakarta",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
