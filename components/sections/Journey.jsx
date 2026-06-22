@@ -8,22 +8,21 @@ import SectionLabel from "@/components/ui/SectionLabel";
 const MILESTONES = [
   { year: "1991", name: "KALA Enterprises", tag: "The foundation" },
   { year: "1994", name: "KALA Genset", tag: "Power systems" },
-  { year: "1999", name: "CHANDRA Infotech", tag: "Technology" },
+  { year: "1999", name: "CHANDRA Infotech", tag: "IoT" },
   { year: "2004", name: "KALA Telecom", tag: "Connectivity" },
   { year: "2007", name: "KALA Kenya", tag: "Going global" },
   { year: "2008", name: "KALA Uganda", tag: "Africa expansion" },
-  { year: "2009", name: "KALA Biotech", tag: "Agri food" },
+  { year: "2009", name: "KALA Biotech", tag: "Tissue culture & agri food" },
   { year: "2012", name: "KALA Infra", tag: "Infrastructure" },
   { year: "2014", name: "KALA Oman LLC", tag: "Middle East" },
   { year: "2018", name: "Freeze n Cold Storage Technologies", tag: "Cold chain" },
-  { year: "2019", name: "KALA Span Defence", tag: "Defence entry" },
+  { year: "2019", name: "KALA Span Defence", tag: "Military bridges, cranes & engineering systems" },
   { year: "2020", name: "Environmental Solutions", tag: "Sustainability" },
   { year: "2022", name: "Defence & Aerospace", tag: "Mission-critical" },
   { year: "2024", name: "Eco Green Energy", tag: "Hydrogen era" },
   { year: "2024", name: "Care Global", tag: "Lifecycle care" },
   { year: "2026", name: "Power Electronics", tag: "Next frontier" },
   { year: "2026", name: "KALA Quantum AI", tag: "SaaS & digital platforms" },
-  { year: "2026", name: "KALA Industries", tag: "Military bridges, cranes & engineering systems" },
 ];
 
 export default function Journey() {

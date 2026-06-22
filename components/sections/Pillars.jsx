@@ -12,8 +12,9 @@ const PILLARS = [
     items: [
       { label: "Gensets", subs: ["Mobile & Stationary", "LHP", "MHP", "HHP", "UHHP", "Natural Gas", "Hybrid", "Alternate Fuel", "Optiprime & Custom", "Integrated Projects"] },
       { label: "Power Generation", subs: ["Diesel", "Gas", "Hydrogen Fuel Cells", "Solar"] },
-      { label: "Energy Storage", subs: ["BESS", "TEM"] },
+      { label: "Energy Storage", subs: ["BESS", "TES"] },
       { label: "Power Distribution", subs: ["Micro-grid"] },
+      { label: "Power Electronics", subs: ["Pulse Power", "Flywheel Storage", "BESS"] },
     ],
     outcome: "Lower grid dependence, faster growth, cleaner energy",
     tone: "blue",
@@ -23,8 +24,8 @@ const PILLARS = [
     n: "02",
     title: "Defence Systems",
     items: [
-      { label: "Ground Systems", subs: ["8×8 Launcher", "Rocket Handling System", "TLV-M1", "P-RV / RLV / FSV", "Battery Command Centre", "Radar Vehicle (K-MAST)", "Communication Radio Relay Vehicle"] },
-      { label: "Engineering Systems", subs: ["Temp. Controlled Shelter", "Canister Project", "60 m ATB (MLC-70)", "36 m MB (MLC-02)", "iDEX SETU", "Composite Modular Ramp", "Engg System without Vehicle"] },
+      { label: "Ground Systems", subs: ["Launcher", "Rocket Handling System", "Missile Handling System", "Battery Command Centre", "Communication Radio Relay Vehicle", "Field Service Vehicle"] },
+      { label: "Engineering Systems", subs: ["Temp. Controlled Shelter", "Canister Project", "Composite Modular Ramp", "Crane", "Advanced Truss Bridge", "Modular Bridge", "Mountain Foot Bridge"] },
       { label: "Advanced Power Management", subs: ["MIL-Grade DG Sets", "Skid & Trailer Mounted DG Sets", "Trailer Mounted Power Systems", "Dual-Voltage APU", "Hydraulic APU", "Hybrid APU", "PM Hybrid Alternator", "Battery-Based Compact Power Source"] },
     ],
     outcome: "Defence manufacturing hub, export-ready tech",
@@ -37,11 +38,11 @@ const PILLARS = [
     items: [
       "Onion Preservation System",
       "Controlled Atmosphere Multi-Product Preservation System",
-      "Grading & Sorting · Hopper · Inclined Conveyor · Tipper · Bag Filling",
+      "Grading & Sorting · Material Handling System",
       "Perishable Preservation & Storage",
       "AI Warehouse Management & Quality Assessment (NIR/AI)",
       "Racking & Storage Systems",
-      "Biotechnology (Mol-Biolab) & R&D Centre",
+      "Biotechnology (Mol-Biolab)",
     ],
     outcome: "Reduced post-harvest losses, farmer prosperity",
     tone: "cyan",
@@ -71,7 +72,7 @@ export default function Pillars() {
             Three Strategic Pillars
           </SectionLabel>
           <h2 className="mt-5 font-serif text-4xl font-medium leading-[1.04] tracking-tight md:text-6xl">
-            <TextReveal text="Contributing to building India's future." />
+            <TextReveal text="Contributing to building the future." />
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-lg text-white/55">
             One conglomerate addressing the three foundations of a self-reliant
