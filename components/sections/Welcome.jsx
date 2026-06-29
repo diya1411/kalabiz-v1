@@ -17,16 +17,22 @@ const HIGHLIGHTS = [
 ];
 
 const PRODUCTS = [
-  { img: "/images/products/genset-25kva.jpg", label: "Gensets", sub: "5 kVA – 5 MW", contain: true },
-  { img: "/images/ground-systems.jpg", label: "Defence Systems", sub: "Ground & engineering systems" },
+  { img: "/images/products/genset-25kva.jpg", label: "Silent Diesel Gensets", sub: "15 – 125 kVA", contain: true },
+  { img: "/images/eco-electrolyser.jpg", label: "Green Hydrogen", sub: "Electrolyser systems" },
+  { img: "/images/ground-systems.jpg", label: "Defence Ground Systems", sub: "Launchers & handling" },
+  { img: "/images/gallery/cold-storage.jpg", label: "Cold Storage Solutions", sub: "Containerised cold chain" },
+  { img: "/images/gallery/deployment.jpg", label: "EV Fast Chargers", sub: "60 kW DC charging" },
+  { img: "/images/ver-defence.jpg", label: "Defence Mobility", sub: "Aakash NG carrier vehicle" },
+  { img: "/images/products/genset-green.jpg", label: "Gas Gensets", sub: "Natural-gas · dual-fuel", contain: true },
+  { img: "/images/biotech-storage.jpg", label: "Biotech & Cold Chain", sub: "Controlled-atmosphere · I-Sense" },
+  { img: "/images/control-panel.jpg", label: "Power Electronics", sub: "LV / MV control panels" },
+  { img: "/images/ver-industries.jpg", label: "Hydraulic Cranes", sub: "Material-handling systems" },
+  { img: "/images/products/genset-1000kva.jpg", label: "HHP Gensets", sub: "320 kVA – 5 MW", contain: true },
   { img: "/images/products/bridge.jpg", label: "Military Bridges", sub: "Deployable bridging" },
-  { img: "/images/products/biotech.jpg", label: "Biotech", sub: "Tissue culture & cold storage" },
-  { img: "/images/eco-electrolyser.jpg", label: "Eco Green Energy", sub: "Hydrogen · solar · BESS" },
-  { img: "/images/control-panel.jpg", label: "Power Electronics", sub: "Panels & controllers" },
-  { img: "/images/crane-facility.jpg", label: "Cranes & Industries", sub: "Cranes & engineering" },
-  { img: "/images/mobility.jpg", label: "Care Global", sub: "Service & lifecycle" },
-  { img: "/images/products/genset-1000kva.jpg", label: "HHP Gensets", sub: "High-horsepower power", contain: true },
-  { img: "/images/products/power-container.jpg", label: "Power Plants", sub: "Containerised power" },
+  { img: "/images/gallery/puf-panel.jpg", label: "PUF Cold-Room Panels", sub: "Insulated panels" },
+  { img: "/images/ver-power.jpg", label: "Mobile Power Units", sub: "Military APU & power" },
+  { img: "/images/products/power-container.jpg", label: "Optiprime Power Plants", sub: "Containerised 2000 series", contain: true },
+  { img: "/images/products/genset-range.png", label: "Full Power Range", sub: "5 kVA – 5 MW", contain: true },
 ];
 
 const half = Math.ceil(PRODUCTS.length / 2);

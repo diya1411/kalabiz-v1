@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect, useState, useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -11,7 +11,14 @@ const VERTICALS = [
   {
     n: "01",
     name: "Genset",
-    img: "/images/ver-genset.jpg",
+    imgs: [
+      "/images/products/r-genset-25kva.png",
+      "/images/products/r-genset-320kva.png",
+      "/images/products/r-genset-1000kva.png",
+      "/images/products/r-optiprime.png",
+      "/images/products/r-genset-portable.png",
+    ],
+    contain: true,
     items: [
       "Diesel Gensets",
       "LHP",
@@ -29,13 +36,22 @@ const VERTICALS = [
   {
     n: "02",
     name: "Defence",
-    img: "/images/ver-defence.jpg",
+    imgs: [
+      "/images/ver-defence.jpg",
+      "/images/ground-systems.jpg",
+      "/images/bridges.jpg",
+      "/images/plant-defence.jpg",
+    ],
     items: ["Ground Systems", "Engineering Systems", "Advanced Power Management"],
   },
   {
     n: "03",
     name: "Biotech",
-    img: "/images/biotech-storage.jpg",
+    imgs: [
+      "/images/biotech-storage.jpg",
+      "/images/gallery/cold-storage.jpg",
+      "/images/plant-freeze.jpg",
+    ],
     items: [
       "Onion Preservation System",
       "Controlled Atmosphere Multi-Product Preservation",
@@ -49,7 +65,7 @@ const VERTICALS = [
   {
     n: "04",
     name: "Eco Green",
-    img: "/images/eco-electrolyser.jpg",
+    imgs: ["/images/eco-electrolyser.jpg", "/images/gallery/deployment.jpg"],
     items: [
       "Solar",
       "Wind",
@@ -60,7 +76,7 @@ const VERTICALS = [
   {
     n: "05",
     name: "Care Global",
-    img: "/images/ver-care.jpg",
+    imgs: ["/images/ver-care.jpg"],
     items: [
       "Product Support (AMC, Spares & RECD)",
       "Reconditioning & Repowering",
@@ -70,7 +86,7 @@ const VERTICALS = [
   {
     n: "06",
     name: "Power Electronics",
-    img: "/images/ver-power.jpg",
+    imgs: ["/images/control-panel.jpg", "/images/ver-power.jpg"],
     items: [
       "Advanced Power Management",
       "Energy Management Systems",
@@ -80,13 +96,13 @@ const VERTICALS = [
   {
     n: "07",
     name: "KALA Industries",
-    img: "/images/ver-industries.jpg",
+    imgs: ["/images/ver-industries.jpg", "/images/crane-facility.jpg"],
     items: ["Military Bridges", "Cranes", "Engineering Systems"],
   },
   {
     n: "08",
     name: "KALA Quantum AI",
-    img: "/images/control-panel.jpg",
+    imgs: ["/images/kqa-logo.png", "/images/ver-ai.jpg"],
     items: ["KALA Careers", "KALA Horizon", "KALA Recall", "KALA Vaani", "KALA Kavach", "KALA Nexora"],
   },
 ];
@@ -169,27 +185,56 @@ export default function Verticals() {
   );
 }
 
-function Panel({ n, name, items, img, mobile = false }) {
+function Slideshow({ imgs, alt, contain = false }) {
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    if (imgs.length < 2) return;
+    const id = setInterval(() => setI((p) => (p + 1) % imgs.length), 3800);
+    return () => clearInterval(id);
+  }, [imgs.length]);
+
+  return (
+    <>
+      {contain && <div className="absolute inset-0 bg-gradient-to-br from-navy via-ink to-black" />}
+      {imgs.map((src, idx) => (
+        <Image
+          key={src}
+          src={src}
+          alt={alt}
+          fill
+          sizes="(max-width: 768px) 100vw, 32vw"
+          className={`transition-[opacity,transform] duration-1000 group-hover:scale-105 ${
+            contain ? "object-contain object-top p-6 pt-10" : "object-cover"
+          } ${idx === i ? "opacity-100" : "opacity-0"}`}
+        />
+      ))}
+    </>
+  );
+}
+
+function Panel({ n, name, items, imgs, contain = false, mobile = false }) {
   return (
     <div
       className={`group relative flex flex-none flex-col justify-end overflow-hidden rounded-3xl border border-gray-line shadow-soft transition-colors hover:border-blue/30 ${
         mobile ? "min-h-[420px] w-full" : "h-[66vh] w-[80vw] sm:w-[32vw]"
       }`}
     >
-      {/* image */}
-      <Image
-        src={img}
-        alt={name}
-        fill
-        sizes="(max-width: 768px) 100vw, 32vw"
-        className="object-cover transition-transform duration-700 group-hover:scale-105"
-      />
+      {/* image slideshow */}
+      <Slideshow imgs={imgs} alt={name} contain={contain} />
       {/* gradient scrim */}
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/10" />
 
       <div className="relative z-10 flex items-center justify-between p-6 pb-0">
         <span className="font-mono text-xs text-white/60">{n}</span>
-        <span className="h-2.5 w-2.5 rounded-full bg-gradient-to-br from-blue to-cyan" />
+        {imgs.length > 1 ? (
+          <div className="flex gap-1.5">
+            {imgs.map((src) => (
+              <span key={src} className="h-1.5 w-1.5 rounded-full bg-white/40" />
+            ))}
+          </div>
+        ) : (
+          <span className="h-2.5 w-2.5 rounded-full bg-gradient-to-br from-blue to-cyan" />
+        )}
       </div>
       <div className="relative z-10 mt-auto p-6">
         <h3 className="font-display text-3xl font-extrabold tracking-tight text-white">{name}</h3>

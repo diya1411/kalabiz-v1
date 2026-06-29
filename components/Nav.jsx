@@ -52,8 +52,8 @@ export default function Nav() {
             priority
             className="h-9 w-9 object-contain"
           />
-          <span className={`font-brand text-2xl font-bold leading-none tracking-wide transition-colors ${scrolled ? "text-ink" : "text-paper"}`}>
-            KALA<span className={scrolled ? "text-blue" : "text-cyan-soft"}> GROUP</span>
+          <span className="font-brand text-2xl font-bold leading-none tracking-wide text-ink transition-colors">
+            KALA<span className="text-blue"> GROUP</span>
           </span>
         </a>
 
@@ -63,11 +63,7 @@ export default function Nav() {
               key={l.label}
               href={`#${l.id}`}
               onClick={(e) => go(e, l.id)}
-              className={`rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${
-                scrolled
-                  ? "text-ink/70 hover:bg-mist hover:text-ink"
-                  : "text-paper/80 hover:bg-paper/10 hover:text-paper"
-              }`}
+              className="rounded-full px-3.5 py-2 text-sm font-medium text-ink/70 transition-colors hover:bg-mist hover:text-ink"
             >
               {l.label}
             </a>
@@ -77,9 +73,7 @@ export default function Nav() {
         <a
           href="#connect"
           onClick={(e) => go(e, "connect")}
-          className={`hidden items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition-colors md:inline-flex ${
-            scrolled ? "bg-ink text-white hover:bg-blue" : "bg-paper text-ink hover:bg-cyan-soft"
-          }`}
+          className="hidden items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue md:inline-flex"
         >
           Connect
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
@@ -90,14 +84,12 @@ export default function Nav() {
         <button
           aria-label="Menu"
           onClick={() => setOpen((o) => !o)}
-          className={`flex h-9 w-9 items-center justify-center rounded-full border md:hidden ${
-            scrolled ? "border-gray-line" : "border-paper/40"
-          }`}
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-line md:hidden"
         >
           <div className="space-y-1">
-            <span className={`block h-0.5 w-4 transition-transform ${scrolled ? "bg-ink" : "bg-paper"} ${open ? "translate-y-1.5 rotate-45" : ""}`} />
-            <span className={`block h-0.5 w-4 transition-opacity ${scrolled ? "bg-ink" : "bg-paper"} ${open ? "opacity-0" : ""}`} />
-            <span className={`block h-0.5 w-4 transition-transform ${scrolled ? "bg-ink" : "bg-paper"} ${open ? "-translate-y-1.5 -rotate-45" : ""}`} />
+            <span className={`block h-0.5 w-4 bg-ink transition-transform ${open ? "translate-y-1.5 rotate-45" : ""}`} />
+            <span className={`block h-0.5 w-4 bg-ink transition-opacity ${open ? "opacity-0" : ""}`} />
+            <span className={`block h-0.5 w-4 bg-ink transition-transform ${open ? "-translate-y-1.5 -rotate-45" : ""}`} />
           </div>
         </button>
       </nav>
