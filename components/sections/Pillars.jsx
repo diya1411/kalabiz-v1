@@ -71,8 +71,8 @@ export default function Pillars() {
           <SectionLabel index="04" className="justify-center !text-cyan-soft">
             Three Strategic Pillars
           </SectionLabel>
-          <h2 className="mt-5 font-serif text-4xl font-medium leading-[1.04] tracking-tight md:text-6xl">
-            <TextReveal text="Contributing to building the future." />
+          <h2 className="mt-5 font-serif text-4xl font-medium leading-[1.04] tracking-tight md:whitespace-nowrap md:text-6xl">
+            <TextReveal text="Contributing to build the future" />
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-lg text-white/55">
             One conglomerate addressing the three foundations of a self-reliant

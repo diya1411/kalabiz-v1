@@ -76,7 +76,7 @@ const VERTICALS = [
   {
     n: "05",
     name: "Care Global",
-    imgs: ["/images/ver-care.jpg"],
+    imgs: ["/images/care-service-1.jpg", "/images/care-service-2.jpg"],
     items: [
       "Product Support (AMC, Spares & RECD)",
       "Reconditioning & Repowering",
@@ -96,7 +96,7 @@ const VERTICALS = [
   {
     n: "07",
     name: "KALA Industries",
-    imgs: ["/images/ver-industries.jpg", "/images/crane-facility.jpg"],
+    imgs: ["/images/ver-industries.jpg"],
     items: ["Military Bridges", "Cranes", "Engineering Systems"],
   },
   {

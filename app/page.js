@@ -9,7 +9,6 @@ import Facilities from "@/components/sections/Facilities";
 import Patents from "@/components/sections/Patents";
 import CoreValues from "@/components/sections/CoreValues";
 import Journey from "@/components/sections/Journey";
-import GlobalPresence from "@/components/sections/GlobalPresence";
 import Events from "@/components/sections/Events";
 import Board from "@/components/sections/Board";
 import Connect from "@/components/sections/Connect";
@@ -28,7 +27,6 @@ export default function Home() {
       <Verticals />
       <Journey />
       <Facilities />
-      <GlobalPresence />
       <Events />
       <Board />
       <Connect />

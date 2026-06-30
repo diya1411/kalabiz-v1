@@ -1,24 +1,36 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { TextReveal } from "@/components/ui/Reveal";
+import LocationsMap from "@/components/LocationsMap";
+
+// The six manufacturing plants — shown as a collage on the Production panel
+const PLANTS = [
+  { img: "/images/plant-corporate.jpg", name: "Corporate HQ & R&D", note: "Pimpri, Pune" },
+  { img: "/images/plant-genset1.jpg", name: "Genset Plant — Unit 1", note: "Chakan, Pune" },
+  { img: "/images/plant-genset4.jpg", name: "Control Panels — Unit 4", note: "Chakan, Pune" },
+  { img: "/images/plant-defence.jpg", name: "Defence Plant", note: "Talegaon, Maval" },
+  { img: "/images/plant-bengaluru.jpg", name: "Manufacturing Plant", note: "Bengaluru" },
+  { img: "/images/plant-biotech.jpg", name: "Biotech & Cold Chain", note: "Pune" },
+];
 
 // 12 functions — 7 core + 5 enabling — that run across every KALA company
 const BACKBONE = [
-  { id: "marketing", group: "Core Functions", category: "Core Function", name: "Marketing", desc: "Brand building, demand generation and market reach across every KALA vertical.", tags: ["Brand & Demand", "Campaigns", "Market Reach"] },
-  { id: "sales", group: "Core Functions", category: "Core Function", name: "Sales", desc: "A pan-India and global sales network converting pipeline into installations.", tags: ["Pan-India Network", "Global Sales", "Key Accounts"] },
-  { id: "rnd", group: "Core Functions", category: "Core Function", name: "R&D", desc: "100+ engineers driving design, indigenisation and continuous innovation.", tags: ["100+ Engineers", "Design", "Indigenisation"] },
-  { id: "production", group: "Core Functions", category: "Core Function", name: "Production", desc: "Six plants manufacturing gensets and systems from 5 kVA to 5 MW.", tags: ["6 Plants", "5 kVA – 5 MW", "CPCB IV+"] },
-  { id: "support", group: "Core Functions", category: "Core Function", name: "Product Support", desc: "AMC, spares and reconditioning delivering full-lifecycle care.", tags: ["AMC", "Spares", "Reconditioning"] },
-  { id: "projects", group: "Core Functions", category: "Core Function", name: "Project Division", desc: "Turnkey project delivery from design through erection and commissioning.", tags: ["Turnkey", "Design-to-Erection", "Commissioning"] },
-  { id: "quality", group: "Core Functions", category: "Core Function", name: "Quality Systems", desc: "ISO, DGQA and CPCB IV+ assurance embedded across every line.", tags: ["ISO 9001", "DGQA", "CPCB IV+"] },
-  { id: "finance", group: "Enabling Foundation", category: "Enabling Function", name: "Finance", desc: "Capital allocation, financial controls and funding for growth.", tags: ["Capital", "Controls", "Growth"] },
-  { id: "hr", group: "Enabling Foundation", category: "Enabling Function", name: "HR", desc: "Talent acquisition, culture and GenNext leadership readiness.", tags: ["Talent", "Culture", "GenNext"] },
-  { id: "legal", group: "Enabling Foundation", category: "Enabling Function", name: "Legal & Statutory", desc: "Compliance, intellectual-property protection and corporate governance.", tags: ["Compliance", "IP", "Governance"] },
-  { id: "it", group: "Enabling Foundation", category: "Enabling Function", name: "IT Infrastructure", desc: "ERP systems, networks and the cybersecurity backbone.", tags: ["ERP", "Networks", "Security"] },
-  { id: "saas", group: "Enabling Foundation", category: "Enabling Function", name: "AI/ML", desc: "Digital platforms and SaaS connecting every function end-to-end.", tags: ["SaaS", "Digital Platforms", "Integration"] },
+  { id: "marketing", category: "Core Function", name: "Marketing", img: "/images/gallery/life-21.jpg", desc: "Brand building, demand generation and market reach across every KALA vertical.", tags: ["Brand & Demand", "Campaigns", "Market Reach"] },
+  { id: "sales", category: "Core Function", name: "Sales", img: "/images/gallery/team-kala.jpg", desc: "A pan-India and global sales network converting pipeline into installations.", tags: ["Pan-India Network", "Global Sales", "Key Accounts"] },
+  { id: "rnd", category: "Core Function", name: "R&D", img: "/images/gallery/3d-printing.jpg", desc: "100+ engineers driving design, indigenisation and continuous innovation.", tags: ["100+ Engineers", "Design", "Indigenisation"] },
+  { id: "production", category: "Core Function", name: "Production", img: "/images/gallery/assembly-line.jpg", desc: "Six plants manufacturing gensets and systems from 5 kVA to 5 MW.", tags: ["6 Plants", "5 kVA – 5 MW", "CPCB IV+"] },
+  { id: "support", category: "Core Function", name: "Product Support", img: "/images/care-service-1.jpg", desc: "AMC, spares and reconditioning delivering full-lifecycle care.", tags: ["AMC", "Spares", "Reconditioning"] },
+  { id: "projects", category: "Core Function", name: "Project Division", img: "/images/gallery/deployment.jpg", desc: "Turnkey project delivery from design through erection and commissioning.", tags: ["Turnkey", "Design-to-Erection", "Commissioning"] },
+  { id: "quality", category: "Core Function", name: "Quality Systems", img: "/images/gallery/dg-testing.jpg", desc: "ISO, DGQA and CPCB IV+ assurance embedded across every line.", tags: ["ISO 9001", "DGQA", "CPCB IV+"] },
+  { id: "finance", category: "Enabling Function", name: "Finance", img: "/images/plant-corporate.jpg", desc: "Capital allocation, financial controls and funding for growth.", tags: ["Capital", "Controls", "Growth"] },
+  { id: "hr", category: "Enabling Function", name: "HR", img: "/images/gallery/real-team.jpg", desc: "Talent acquisition, culture and GenNext leadership readiness.", tags: ["Talent", "Culture", "GenNext"] },
+  { id: "legal", category: "Enabling Function", name: "Legal & Statutory", img: "/images/facility-aerial.jpg", desc: "Compliance, intellectual-property protection and corporate governance.", tags: ["Compliance", "IP", "Governance"] },
+  { id: "it", category: "Enabling Function", name: "IT Infrastructure", img: "/images/control-panel.jpg", desc: "ERP systems, networks and the cybersecurity backbone.", tags: ["ERP", "Networks", "Security"] },
+  { id: "saas", category: "Enabling Function", name: "AI/ML", img: "/images/ver-ai.jpg", desc: "Digital platforms and SaaS connecting every function end-to-end.", tags: ["SaaS", "Digital Platforms", "Integration"] },
 ];
 
 export default function Facilities() {
@@ -53,13 +65,16 @@ export default function Facilities() {
                 key={item.id}
                 onMouseEnter={() => setActive(i)}
                 onClick={() => setActive(i)}
-                className={`group relative w-full overflow-hidden rounded-2xl border p-4 text-left transition-all duration-300 ${
+                className={`group relative w-full overflow-hidden rounded-2xl border p-3 text-left transition-all duration-300 ${
                   active === i
                     ? "border-cyan/40 bg-white/[0.08]"
                     : "border-white/10 bg-white/[0.03] hover:bg-white/[0.05]"
                 }`}
               >
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3.5">
+                  <span className="relative h-12 w-12 flex-none overflow-hidden rounded-xl border border-white/10">
+                    <Image src={item.img} alt="" fill sizes="48px" className="object-cover" />
+                  </span>
                   <span className={`font-mono text-xs transition-colors ${active === i ? "text-cyan-soft" : "text-white/40"}`}>
                     {`0${i + 1}`.slice(-2)}
                   </span>
@@ -84,42 +99,84 @@ export default function Facilities() {
           </div>
 
           {/* detail panel */}
-          <div className="relative h-[380px] overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-br from-navy via-ink to-navy sm:h-[520px]">
-            <div className="absolute inset-0 bg-grid opacity-10" />
-            <div
-              className="absolute inset-0"
-              style={{ background: "radial-gradient(70% 70% at 70% 30%, rgba(22,197,233,0.14), transparent 70%)" }}
-            />
+          <div className="relative h-[380px] overflow-hidden rounded-3xl border border-white/15 bg-ink sm:h-[520px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={f.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
+                exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute inset-0 flex flex-col justify-between p-8 md:p-10"
+                className="absolute inset-0"
               >
-                <div className="flex items-start justify-between">
-                  <span className="rounded-full bg-cyan/20 px-3 py-1 text-xs font-semibold text-cyan-soft backdrop-blur">
-                    Operational Backbone
-                  </span>
-                  <span className="font-display text-7xl font-extrabold leading-none text-white/[0.07] md:text-8xl">
-                    {`0${active + 1}`.slice(-2)}
-                  </span>
-                </div>
-                <div>
-                  <h3 className="font-display text-3xl font-extrabold tracking-tight md:text-4xl">{f.name}</h3>
-                  <p className="mt-3 max-w-md text-white/70">{f.desc}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {f.tags.map((t) => (
-                      <span key={t} className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium text-white/85 backdrop-blur">
-                        {t}
-                      </span>
-                    ))}
+                {/* related image */}
+                <Image
+                  src={f.img}
+                  alt={f.name}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 to-ink/25" />
+
+                {/* content */}
+                <div className="absolute inset-0 flex flex-col justify-between p-8 md:p-10">
+                  <div className="flex items-start justify-between">
+                    <span className="rounded-full bg-cyan/20 px-3 py-1 text-xs font-semibold text-cyan-soft backdrop-blur">
+                      {f.category === "Core Function" ? "Core Function" : "Enabling Foundation"}
+                    </span>
+                    <span className="font-display text-7xl font-extrabold leading-none text-white/15 md:text-8xl">
+                      {`0${active + 1}`.slice(-2)}
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="font-display text-3xl font-extrabold tracking-tight md:text-4xl">{f.name}</h3>
+                    <p className="mt-3 max-w-md text-white/75">{f.desc}</p>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {f.tags.map((t) => (
+                        <span key={t} className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium text-white/85 backdrop-blur">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </motion.div>
             </AnimatePresence>
+
+            {/* Production (04) reveals a collage of the six plants */}
+            <div
+              className={`absolute inset-0 transition-opacity duration-500 ${
+                f.id === "production" ? "opacity-100" : "pointer-events-none opacity-0"
+              }`}
+            >
+              <div className="grid h-full grid-cols-2 grid-rows-3 gap-1.5 p-1.5">
+                {PLANTS.map((p) => (
+                  <figure key={p.img} className="relative overflow-hidden rounded-xl">
+                    <Image
+                      src={p.img}
+                      alt={p.name}
+                      fill
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      className="object-cover"
+                    />
+                    <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent p-2">
+                      <p className="text-[11px] font-bold leading-tight text-white">{p.name}</p>
+                      <p className="text-[9px] leading-tight text-white/70">{p.note}</p>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+
+            {/* Project Division (06) reveals the deployment map */}
+            <div
+              className={`absolute inset-0 transition-opacity duration-500 ${
+                f.id === "projects" ? "opacity-100" : "pointer-events-none opacity-0"
+              }`}
+            >
+              <LocationsMap fill />
+            </div>
           </div>
         </div>
       </div>

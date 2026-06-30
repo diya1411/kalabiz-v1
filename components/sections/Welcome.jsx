@@ -23,20 +23,27 @@ const PRODUCTS = [
   { img: "/images/gallery/cold-storage.jpg", label: "Cold Storage Solutions", sub: "Containerised cold chain" },
   { img: "/images/gallery/deployment.jpg", label: "EV Fast Chargers", sub: "60 kW DC charging" },
   { img: "/images/ver-defence.jpg", label: "Defence Mobility", sub: "Aakash NG carrier vehicle" },
-  { img: "/images/products/genset-green.jpg", label: "Gas Gensets", sub: "Natural-gas · dual-fuel", contain: true },
+  { img: "/images/products/genset-gas.jpg", label: "Gas Gensets", sub: "Natural-gas · dual-fuel", contain: true },
   { img: "/images/biotech-storage.jpg", label: "Biotech & Cold Chain", sub: "Controlled-atmosphere · I-Sense" },
   { img: "/images/control-panel.jpg", label: "Power Electronics", sub: "LV / MV control panels" },
   { img: "/images/ver-industries.jpg", label: "Hydraulic Cranes", sub: "Material-handling systems" },
   { img: "/images/products/genset-1000kva.jpg", label: "HHP Gensets", sub: "320 kVA – 5 MW", contain: true },
   { img: "/images/products/bridge.jpg", label: "Military Bridges", sub: "Deployable bridging" },
   { img: "/images/gallery/puf-panel.jpg", label: "PUF Cold-Room Panels", sub: "Insulated panels" },
-  { img: "/images/ver-power.jpg", label: "Mobile Power Units", sub: "Military APU & power" },
+  { img: "/images/products/genset-portable.jpg", label: "Mobile Power Units", sub: "Portable & APU power", contain: true },
   { img: "/images/products/power-container.jpg", label: "Optiprime Power Plants", sub: "Containerised 2000 series", contain: true },
   { img: "/images/products/genset-range.png", label: "Full Power Range", sub: "5 kVA – 5 MW", contain: true },
 ];
 
 const half = Math.ceil(PRODUCTS.length / 2);
 const PRODUCT_COLS = [PRODUCTS.slice(0, half), PRODUCTS.slice(half)];
+
+// Welcome-only: fills the blank 10th cell in the stats band (kept out of the
+// shared STATS so GlobalPresence's 3×3 grid stays even).
+const WELCOME_STATS = [
+  ...STATS,
+  { value: 10, suffix: "+", label: "Exclusive Technology Partners" },
+];
 
 export default function Welcome() {
   return (
@@ -114,7 +121,7 @@ export default function Welcome() {
       {/* stats band */}
       <div className="mx-auto mt-16 max-w-7xl px-6 md:mt-20">
         <div className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-gray-line bg-gray-line sm:grid-cols-3 lg:grid-cols-5">
-          {STATS.map((s, i) => (
+          {WELCOME_STATS.map((s, i) => (
             <motion.div
               key={s.label}
               initial={{ opacity: 0 }}

@@ -16,7 +16,7 @@ const MILESTONES = [
   { year: "2012", name: "KALA Infra", tag: "Infrastructure" },
   { year: "2014", name: "KALA Oman LLC", tag: "Middle East" },
   { year: "2018", name: "Freeze n Cold Storage Technologies", tag: "Cold chain" },
-  { year: "2019", name: "KALA Span Defence", tag: "Military bridges, cranes & engineering systems" },
+  { year: "2019", name: "KALA Industries", tag: "Military bridges, cranes & engineering systems" },
   { year: "2020", name: "Environmental Solutions", tag: "Sustainability" },
   { year: "2022", name: "Defence & Aerospace", tag: "Mission-critical" },
   { year: "2024", name: "Eco Green Energy", tag: "Hydrogen era" },

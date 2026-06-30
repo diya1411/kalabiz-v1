@@ -77,7 +77,7 @@ function ensureLeaflet() {
   });
 }
 
-export default function LocationsMap() {
+export default function LocationsMap({ fill = false }) {
   const elRef = useRef(null);
   const mapRef = useRef(null);
 
@@ -196,8 +196,8 @@ export default function LocationsMap() {
   }, []);
 
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-gray-line bg-offwhite shadow-soft">
-      <div ref={elRef} className="h-[420px] w-full sm:h-[520px]" style={{ zIndex: 0 }} />
+    <div className={`relative overflow-hidden rounded-3xl border border-gray-line bg-offwhite shadow-soft ${fill ? "h-full" : ""}`}>
+      <div ref={elRef} className={fill ? "h-full w-full" : "h-[420px] w-full sm:h-[520px]"} style={{ zIndex: 0 }} />
       {/* legend */}
       <div className="pointer-events-none absolute bottom-4 left-4 z-[400] flex flex-col gap-2 rounded-xl border border-gray-line bg-white/90 p-3 text-xs backdrop-blur">
         <div className="flex items-center gap-2">

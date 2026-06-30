@@ -26,12 +26,34 @@ function SocialIcon({ name }) {
   );
 }
 
+const FORM_ENDPOINT = "https://formspree.io/f/xdarlzaq";
+
 export default function Connect() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    setSent(true);
+    setError("");
+    setSending(true);
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(e.target),
+      });
+      if (res.ok) {
+        setSent(true);
+        e.target.reset();
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -71,7 +93,7 @@ export default function Connect() {
               <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-gray-soft">
                 Area of Interest
               </label>
-              <select className="w-full rounded-xl border border-gray-line bg-white px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-blue">
+              <select name="interest" className="w-full rounded-xl border border-gray-line bg-white px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-blue">
                 <option>Energy & Power Solutions</option>
                 <option>Defence & Aerospace</option>
                 <option>Eco Green Energy</option>
@@ -85,6 +107,7 @@ export default function Connect() {
                 Message
               </label>
               <textarea
+                name="message"
                 rows={4}
                 placeholder="Tell us about your requirement…"
                 className="w-full resize-none rounded-xl border border-gray-line bg-white px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-blue"
@@ -92,15 +115,17 @@ export default function Connect() {
             </div>
             <button
               type="submit"
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-blue sm:w-auto"
+              disabled={sending || sent}
+              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-blue disabled:opacity-70 sm:w-auto"
             >
-              {sent ? "Thank you — we'll be in touch" : "Send Message"}
-              {!sent && (
+              {sent ? "Thank you — we'll be in touch" : sending ? "Sending…" : "Send Message"}
+              {!sent && !sending && (
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
                   <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               )}
             </button>
+            {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
           </motion.form>
 
           {/* contact details */}
