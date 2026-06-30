@@ -19,18 +19,18 @@ const PLANTS = [
 
 // 12 functions — 7 core + 5 enabling — that run across every KALA company
 const BACKBONE = [
-  { id: "marketing", category: "Core Function", name: "Marketing", img: "/images/gallery/life-21.jpg", desc: "Brand building, demand generation and market reach across every KALA vertical.", tags: ["Brand & Demand", "Campaigns", "Market Reach"] },
-  { id: "sales", category: "Core Function", name: "Sales", img: "/images/gallery/team-kala.jpg", desc: "A pan-India and global sales network converting pipeline into installations.", tags: ["Pan-India Network", "Global Sales", "Key Accounts"] },
-  { id: "rnd", category: "Core Function", name: "R&D", img: "/images/gallery/3d-printing.jpg", desc: "100+ engineers driving design, indigenisation and continuous innovation.", tags: ["100+ Engineers", "Design", "Indigenisation"] },
+  { id: "marketing", category: "Core Function", name: "Marketing", img: "/images/backbone/marketing.png", desc: "Brand building, demand generation and market reach across every KALA vertical.", tags: ["Brand & Demand", "Campaigns", "Market Reach"] },
+  { id: "sales", category: "Core Function", name: "Sales", img: "/images/backbone/sales.png", desc: "A pan-India and global sales network converting pipeline into installations.", tags: ["Pan-India Network", "Global Sales", "Key Accounts"] },
+  { id: "rnd", category: "Core Function", name: "R&D", img: "/images/backbone/rnd.png", desc: "100+ engineers driving design, indigenisation and continuous innovation.", tags: ["100+ Engineers", "Design", "Indigenisation"] },
   { id: "production", category: "Core Function", name: "Production", img: "/images/gallery/assembly-line.jpg", desc: "Six plants manufacturing gensets and systems from 5 kVA to 5 MW.", tags: ["6 Plants", "5 kVA – 5 MW", "CPCB IV+"] },
-  { id: "support", category: "Core Function", name: "Product Support", img: "/images/care-service-1.jpg", desc: "AMC, spares and reconditioning delivering full-lifecycle care.", tags: ["AMC", "Spares", "Reconditioning"] },
+  { id: "support", category: "Core Function", name: "Product Support", img: "/images/backbone/support.png", desc: "AMC, spares and reconditioning delivering full-lifecycle care.", tags: ["AMC", "Spares", "Reconditioning"] },
   { id: "projects", category: "Core Function", name: "Project Division", img: "/images/gallery/deployment.jpg", desc: "Turnkey project delivery from design through erection and commissioning.", tags: ["Turnkey", "Design-to-Erection", "Commissioning"] },
-  { id: "quality", category: "Core Function", name: "Quality Systems", img: "/images/gallery/dg-testing.jpg", desc: "ISO, DGQA and CPCB IV+ assurance embedded across every line.", tags: ["ISO 9001", "DGQA", "CPCB IV+"] },
-  { id: "finance", category: "Enabling Function", name: "Finance", img: "/images/plant-corporate.jpg", desc: "Capital allocation, financial controls and funding for growth.", tags: ["Capital", "Controls", "Growth"] },
-  { id: "hr", category: "Enabling Function", name: "HR", img: "/images/gallery/real-team.jpg", desc: "Talent acquisition, culture and GenNext leadership readiness.", tags: ["Talent", "Culture", "GenNext"] },
-  { id: "legal", category: "Enabling Function", name: "Legal & Statutory", img: "/images/facility-aerial.jpg", desc: "Compliance, intellectual-property protection and corporate governance.", tags: ["Compliance", "IP", "Governance"] },
-  { id: "it", category: "Enabling Function", name: "IT Infrastructure", img: "/images/control-panel.jpg", desc: "ERP systems, networks and the cybersecurity backbone.", tags: ["ERP", "Networks", "Security"] },
-  { id: "saas", category: "Enabling Function", name: "AI/ML", img: "/images/ver-ai.jpg", desc: "Digital platforms and SaaS connecting every function end-to-end.", tags: ["SaaS", "Digital Platforms", "Integration"] },
+  { id: "quality", category: "Core Function", name: "Quality Systems", img: "/images/backbone/quality.png", desc: "ISO, DGQA and CPCB IV+ assurance embedded across every line.", tags: ["ISO 9001", "DGQA", "CPCB IV+"] },
+  { id: "finance", category: "Enabling Function", name: "Finance", img: "/images/backbone/finance.png", desc: "Capital allocation, financial controls and funding for growth.", tags: ["Capital", "Controls", "Growth"] },
+  { id: "hr", category: "Enabling Function", name: "HR", img: "/images/backbone/hr.png", desc: "Talent acquisition, culture and GenNext leadership readiness.", tags: ["Talent", "Culture", "GenNext"] },
+  { id: "legal", category: "Enabling Function", name: "Legal & Statutory", img: "/images/backbone/legal.png", desc: "Compliance, intellectual-property protection and corporate governance.", tags: ["Compliance", "IP", "Governance"] },
+  { id: "it", category: "Enabling Function", name: "IT Infrastructure", img: "/images/backbone/it.png", desc: "ERP systems, networks and the cybersecurity backbone.", tags: ["ERP", "Networks", "Security"] },
+  { id: "saas", category: "Enabling Function", name: "AI/ML", img: "/images/backbone/aiml.png", desc: "Digital platforms and SaaS connecting every function end-to-end.", tags: ["SaaS", "Digital Platforms", "Integration"] },
 ];
 
 // Product Support (05) — full-lifecycle care, shown as a circular flow
