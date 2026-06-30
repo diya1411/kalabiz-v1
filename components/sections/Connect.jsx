@@ -142,11 +142,12 @@ export default function Connect() {
             </div>
             <div className="mt-5">
               <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-gray-soft">
-                Message
+                Message <span className="text-blue">*</span>
               </label>
               <textarea
                 name="message"
                 rows={4}
+                required
                 placeholder="Tell us about your requirement…"
                 className="w-full resize-none rounded-xl border border-gray-line bg-white px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-blue"
               />
@@ -221,12 +222,13 @@ function Field({ label, name, type = "text", placeholder }) {
   return (
     <div>
       <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-gray-soft">
-        {label}
+        {label} <span className="text-blue">*</span>
       </label>
       <input
         name={name}
         type={type}
         placeholder={placeholder}
+        required
         className="w-full rounded-xl border border-gray-line bg-white px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-blue"
       />
     </div>
