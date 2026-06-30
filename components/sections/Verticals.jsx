@@ -17,6 +17,7 @@ const VERTICALS = [
       "/images/products/r-genset-1000kva.png",
       "/images/products/r-optiprime.png",
       "/images/products/r-genset-portable.png",
+      "/images/products/genset-range.png",
     ],
     contain: true,
     items: [
@@ -37,10 +38,12 @@ const VERTICALS = [
     n: "02",
     name: "Defence",
     imgs: [
-      "/images/ver-defence.jpg",
-      "/images/ground-systems.jpg",
-      "/images/bridges.jpg",
-      "/images/plant-defence.jpg",
+      "/images/verticals/defence-1.jpg",
+      "/images/verticals/defence-2.jpg",
+      "/images/verticals/defence-3.jpg",
+      "/images/verticals/defence-4.jpg",
+      "/images/verticals/defence-5.jpg",
+      "/images/verticals/defence-6.jpg",
     ],
     items: ["Ground Systems", "Engineering Systems", "Advanced Power Management"],
   },
@@ -48,9 +51,12 @@ const VERTICALS = [
     n: "03",
     name: "Biotech",
     imgs: [
-      "/images/biotech-storage.jpg",
-      "/images/gallery/cold-storage.jpg",
-      "/images/plant-freeze.jpg",
+      "/images/verticals/biotech-1.jpg",
+      "/images/verticals/biotech-2.jpg",
+      "/images/verticals/biotech-3.jpg",
+      "/images/verticals/biotech-4.jpg",
+      "/images/verticals/biotech-5.jpg",
+      "/images/verticals/biotech-6.jpg",
     ],
     items: [
       "Onion Preservation System",
@@ -65,7 +71,14 @@ const VERTICALS = [
   {
     n: "04",
     name: "Eco Green",
-    imgs: ["/images/eco-electrolyser.jpg", "/images/gallery/deployment.jpg"],
+    imgs: [
+      "/images/verticals/ecogreen-1.jpg",
+      "/images/verticals/ecogreen-2.jpg",
+      "/images/verticals/ecogreen-3.jpg",
+      "/images/verticals/ecogreen-4.jpg",
+      "/images/verticals/ecogreen-5.jpg",
+      "/images/verticals/ecogreen-6.jpg",
+    ],
     items: [
       "Solar",
       "Wind",
@@ -76,7 +89,14 @@ const VERTICALS = [
   {
     n: "05",
     name: "Care Global",
-    imgs: ["/images/care-service-1.jpg", "/images/care-service-2.jpg"],
+    imgs: [
+      "/images/verticals/care-1.jpg",
+      "/images/verticals/care-2.jpg",
+      "/images/verticals/care-3.jpg",
+      "/images/verticals/care-4.jpg",
+      "/images/verticals/care-5.jpg",
+      "/images/verticals/care-6.jpg",
+    ],
     items: [
       "Product Support (AMC, Spares & RECD)",
       "Reconditioning & Repowering",
@@ -86,7 +106,14 @@ const VERTICALS = [
   {
     n: "06",
     name: "Power Electronics",
-    imgs: ["/images/control-panel.jpg", "/images/ver-power.jpg"],
+    imgs: [
+      "/images/verticals/power-1.jpg",
+      "/images/verticals/power-2.jpg",
+      "/images/verticals/power-3.jpg",
+      "/images/verticals/power-4.jpg",
+      "/images/verticals/power-5.jpg",
+      "/images/verticals/power-6.jpg",
+    ],
     items: [
       "Advanced Power Management",
       "Energy Management Systems",
@@ -96,13 +123,28 @@ const VERTICALS = [
   {
     n: "07",
     name: "KALA Industries",
-    imgs: ["/images/ver-industries.jpg"],
+    imgs: [
+      "/images/verticals/industries-1.jpg",
+      "/images/verticals/industries-2.jpg",
+      "/images/verticals/industries-3.jpg",
+      "/images/verticals/industries-4.jpg",
+      "/images/verticals/industries-5.jpg",
+      "/images/verticals/industries-6.jpg",
+    ],
     items: ["Military Bridges", "Cranes", "Engineering Systems"],
   },
   {
     n: "08",
     name: "KALA Quantum AI",
-    imgs: ["/images/kqa-logo.png", "/images/ver-ai.jpg"],
+    imgs: [
+      "/images/verticals/ai-1.png",
+      "/images/verticals/ai-2.png",
+      "/images/verticals/ai-3.png",
+      "/images/verticals/ai-4.png",
+      "/images/verticals/ai-5.png",
+      "/images/verticals/ai-6.png",
+    ],
+    contain: true,
     items: ["KALA Careers", "KALA Horizon", "KALA Recall", "KALA Vaani", "KALA Kavach", "KALA Nexora"],
   },
 ];
