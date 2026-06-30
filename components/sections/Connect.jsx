@@ -28,22 +28,39 @@ function SocialIcon({ name }) {
 
 const FORM_ENDPOINT = "https://formspree.io/f/xdarlzaq";
 
+function generateEnqCode() {
+  const d = new Date();
+  const ymd =
+    d.getFullYear().toString() +
+    String(d.getMonth() + 1).padStart(2, "0") +
+    String(d.getDate()).padStart(2, "0");
+  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  let suffix = "";
+  for (let i = 0; i < 4; i++) suffix += chars[Math.floor(Math.random() * chars.length)];
+  return `ENQ-${ymd}-${suffix}`;
+}
+
 export default function Connect() {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
+  const [enqCode, setEnqCode] = useState("");
 
   const submit = async (e) => {
     e.preventDefault();
     setError("");
     setSending(true);
+    const code = generateEnqCode();
     try {
+      const data = new FormData(e.target);
+      data.set("enquiry_code", code);
       const res = await fetch(FORM_ENDPOINT, {
         method: "POST",
         headers: { Accept: "application/json" },
-        body: new FormData(e.target),
+        body: data,
       });
       if (res.ok) {
+        setEnqCode(code);
         setSent(true);
         e.target.reset();
       } else {
@@ -75,6 +92,38 @@ export default function Connect() {
 
         <div className="mt-16 grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           {/* form */}
+          {sent ? (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="flex flex-col items-center justify-center rounded-3xl border border-gray-line bg-offwhite p-10 text-center shadow-soft md:p-14"
+            >
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-blue/10 text-blue">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+              <h3 className="mt-5 font-serif text-2xl font-medium tracking-tight text-ink md:text-3xl">
+                Thank you for your enquiry
+              </h3>
+              <p className="mt-3 max-w-md text-sm leading-relaxed text-ink/70">
+                Our representative will shortly get in touch with you.
+              </p>
+              <div className="mt-6 rounded-2xl border border-gray-line bg-white px-6 py-4">
+                <p className="text-xs font-semibold uppercase tracking-wider text-gray-soft">
+                  Your Enquiry Code
+                </p>
+                <p className="mt-1 font-display text-xl font-bold tracking-wide text-blue">
+                  {enqCode}
+                </p>
+                <p className="mt-1.5 text-xs text-ink/50">
+                  Please quote this code for any follow-up.
+                </p>
+              </div>
+            </motion.div>
+          ) : (
           <motion.form
             onSubmit={submit}
             initial={{ opacity: 0, y: 30 }}
@@ -84,23 +133,12 @@ export default function Connect() {
             className="rounded-3xl border border-gray-line bg-offwhite p-7 shadow-soft md:p-9"
           >
             <div className="grid gap-5 sm:grid-cols-2">
-              <Field label="Name" name="name" placeholder="Your name" />
-              <Field label="Company" name="company" placeholder="Organisation" />
+              <Field label="First Name" name="first_name" placeholder="First name" />
+              <Field label="Last Name" name="last_name" placeholder="Last name" />
+              <Field label="Organisation" name="company" placeholder="Company / organisation" />
               <Field label="Email" name="email" type="email" placeholder="you@company.com" />
               <Field label="Phone" name="phone" placeholder="+91" />
-            </div>
-            <div className="mt-5">
-              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-gray-soft">
-                Area of Interest
-              </label>
-              <select name="interest" className="w-full rounded-xl border border-gray-line bg-white px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-blue">
-                <option>Energy & Power Solutions</option>
-                <option>Defence & Aerospace</option>
-                <option>Eco Green Energy</option>
-                <option>Biotech & Food Storage</option>
-                <option>KALA Quantum AI</option>
-                <option>Partnership / Investment</option>
-              </select>
+              <Field label="City" name="city" placeholder="City / location" />
             </div>
             <div className="mt-5">
               <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-gray-soft">
@@ -115,11 +153,11 @@ export default function Connect() {
             </div>
             <button
               type="submit"
-              disabled={sending || sent}
+              disabled={sending}
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-blue disabled:opacity-70 sm:w-auto"
             >
-              {sent ? "Thank you — we'll be in touch" : sending ? "Sending…" : "Send Message"}
-              {!sent && !sending && (
+              {sending ? "Sending…" : "Send Message"}
+              {!sending && (
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
                   <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -127,6 +165,7 @@ export default function Connect() {
             </button>
             {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
           </motion.form>
+          )}
 
           {/* contact details */}
           <motion.div

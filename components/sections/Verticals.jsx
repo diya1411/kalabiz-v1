@@ -129,7 +129,6 @@ const VERTICALS = [
       "/images/verticals/industries-3.jpg",
       "/images/verticals/industries-4.jpg",
       "/images/verticals/industries-5.jpg",
-      "/images/verticals/industries-6.jpg",
     ],
     items: ["Military Bridges", "Cranes", "Engineering Systems"],
   },
